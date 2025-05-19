@@ -33,27 +33,22 @@
     <h1>Contáctenos</h1>
     <p>Estamos listos para ayudarle a integrar soluciones holográficas personalizadas en su empresa.</p>
   </section>
-
   <section class="contact-form glass-inner">
-    <form id="form-contacto" action="#" method="post" novalidate>
-      <div class="form-group">
-        <label for="nombre">Nombre completo</label>
-        <input type="text" id="nombre" name="nombre" required placeholder="Su nombre completo" />
-      </div>
+    <form id="form-contacto" action="https://formspree.io/f/xyzwvjnk" method="POST">
+      <label for="nombre">Nombre</label>
+      <input type="text" name="nombre" id="nombre" required>
 
-      <div class="form-group">
-        <label for="email">Correo electrónico</label>
-        <input type="email" id="email" name="email" required placeholder="su@email.com" />
-      </div>
+      <label for="email">Correo electrónico</label>
+      <input type="email" name="email" id="email" required>
 
-      <div class="form-group">
-        <label for="mensaje">Mensaje</label>
-        <textarea id="mensaje" name="mensaje" rows="5" required placeholder="Escriba su mensaje aquí..."></textarea>
-      </div>
+      <label for="mensaje">Mensaje</label>
+      <textarea name="mensaje" id="mensaje" rows="5" required></textarea>
 
-      <button type="submit" class="btn-primary">Enviar Mensaje</button>
-      <p id="form-msg" class="form-msg"></p>
+      <button type="submit" class="btn-primary">Enviar</button>
+      <p id="respuesta-formulario" style="margin-top: 1rem; color: var(--primary);"></p>
+
     </form>
+
   </section>
 </main>
 
@@ -68,5 +63,38 @@
   <!-- Scripts -->
   <script src="js/particles.min.js"></script>
   <script src="js/script.js"></script>
+
+
+  <script>
+document.getElementById("form-contacto").addEventListener("submit", async function(e) {
+  e.preventDefault();
+
+  const form = e.target;
+  const data = new FormData(form);
+  const respuesta = document.getElementById("respuesta-formulario");
+
+  try {
+    const res = await fetch(form.action, {
+      method: "POST",
+      body: data,
+      headers: {
+        'Accept': 'application/json'
+      }
+    });
+
+    if (res.ok) {
+      respuesta.textContent = "✅ ¡Mensaje enviado con éxito!";
+      form.reset();
+    } else {
+      respuesta.textContent = "❌ Hubo un problema al enviar el mensaje.";
+    }
+  } catch (error) {
+    respuesta.textContent = "⚠️ Error de conexión.";
+  }
+});
+</script>
+
+
+
 </body>
 </html>

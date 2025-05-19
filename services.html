@@ -5,45 +5,51 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Servicios - Hologramas Costa Rica</title>
   <link rel="stylesheet" href="css/styles.css" />
-
-
+  <link rel="icon" href="img/logo.png" type="image/png" />
 </head>
 <body>
-  <header class="main-header container">
-    <img src="img/logo.png" alt="Logo Hologramas CR" class="logo" />
-    <nav>
-      <ul class="nav-links">
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="about.html">Acerca de Nosotros</a></li>
-        <li><a href="products.html">Productos</a></li>
-        <li><a href="services.html" aria-current="page">Servicios</a></li>
-        <li><a href="contact.html">Contacto</a></li>
-      </ul>
-    </nav>
+  <!-- Fondo dinámico -->
+  <div id="particles-js"></div>
+
+  <!-- Encabezado -->
+  <header class="main-header glass">
+    <div class="container">
+      <img src="img/logo.png" alt="Logo Hologramas CR" class="logo" />
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="about.html">Acerca de Nosotros</a></li>
+          <li><a href="products.html">Productos</a></li>
+          <li><a href="services.html" aria-current="page">Servicios</a></li>
+          <li><a href="contact.html">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <main class="container">
-    <section class="hero">
+  <!-- Contenido principal -->
+  <main class="container glass content">
+    <section class="hero glass-inner">
       <h1>Servicios Profesionales</h1>
       <p>Apoyamos a su empresa con soluciones completas y personalizadas en holografía.</p>
     </section>
 
     <section class="services-list">
-      <article class="service-card">
+      <article class="service-card glass-inner">
         <h2>Mantenimiento Preventivo y Correctivo</h2>
         <p>
           Aseguramos la operatividad y prolongamos la vida útil de sus equipos holográficos con planes adaptados a sus necesidades.
         </p>
       </article>
 
-      <article class="service-card">
+      <article class="service-card glass-inner">
         <h2>Diseño y Desarrollo Personalizado</h2>
         <p>
           Creamos soluciones a la medida, integrando tecnología holográfica con sistemas específicos de su industria para maximizar el impacto.
         </p>
       </article>
 
-      <article class="service-card">
+      <article class="service-card glass-inner">
         <h2>Consultoría Técnica y Capacitación</h2>
         <p>
           Brindamos asesoría experta y formación para su equipo, garantizando el uso eficiente y seguro de las tecnologías holográficas.
@@ -52,10 +58,15 @@
     </section>
   </main>
 
-  <footer>
-    <p>&copy; 2025 Hologramas Costa Rica. Todos los derechos reservados.</p>
+  <!-- Pie de página -->
+  <footer class="glass">
+    <div class="container">
+      <p>&copy; 2025 Hologramas Costa Rica. Todos los derechos reservados.</p>
+    </div>
   </footer>
 
-  <script src="js/scripts.js"></script>
+  <!-- Scripts -->
+  <script src="js/particles.min.js"></script>
+  <script src="js/script.js"></script>
 </body>
 </html>

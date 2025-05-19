@@ -160,5 +160,46 @@ footer a {
   line-height: 1.6;
 }
 
+.products-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.product-card {
+  background: var(--glass);
+  border: 1px solid var(--border-glow);
+  border-radius: 16px;
+  box-shadow: 0 0 10px var(--border-glow);
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px var(--primary);
+}
+
+.product-card h2 {
+  font-family: var(--font-future);
+  font-size: 1.5rem;
+  margin: 1rem;
+  color: var(--primary);
+}
+
+.product-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-bottom: 1px solid var(--border-glow);
+}
+
+.product-card p {
+  padding: 1rem;
+  color: #ccc;
+  line-height: 1.6;
+}
+
 
 

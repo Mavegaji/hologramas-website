@@ -11,20 +11,24 @@
 
 </head>
 <body>
-  <header class="main-header">
-    <div class="container">
-      <img src="images/logo.png" alt="Logo Hologramas CR" class="logo" />
-      <nav>
-        <ul class="nav-links">
-          <li><a href="index.html">Inicio</a></li>
-          <li><a href="about.html">Nosotros</a></li>
-          <li><a href="services.html">Servicios</a></li>
-          <li><a href="products.html">Productos</a></li>
-          <li><a href="contact.html">Contacto</a></li>
-        </ul>
-      </nav>
+  <header class="main-header container">
+  <img src="images/logo.png" alt="Logo Hologramas CR" class="logo" />
+  <nav>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="about.html">Nosotros</a></li>
+      <li><a href="services.html">Servicios</a></li>
+      <li><a href="products.html">Productos</a></li>
+      <li><a href="contact.html">Contacto</a></li>
+    </ul>
+    <div class="menu-toggle" id="menu-toggle" aria-label="Toggle menu" role="button" tabindex="0">
+      <div></div>
+      <div></div>
+      <div></div>
     </div>
-  </header>
+  </nav>
+</header>
+
 
   <section class="hero">
     <div class="container">
@@ -65,5 +69,7 @@
   </footer>
 
   <script src="js/scripts.js"></script>
+  <script src="js/menu.js"></script>
+
 </body>
 </html>

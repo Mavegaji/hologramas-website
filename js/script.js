@@ -31,3 +31,20 @@ document.addEventListener('DOMContentLoaded', () => {
    });
 
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("form-contacto");
+  const msg = document.getElementById("form-msg");
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    msg.textContent = "Mensaje enviado correctamente. ¡Gracias por contactarnos!";
+    form.reset();
+
+    setTimeout(() => {
+      msg.textContent = "";
+    }, 5000);
+  });
+});
+
+

@@ -29,37 +29,34 @@
 
   <!-- Contenido principal -->
   <main class="container glass content">
-    <section class="hero glass-inner">
-      <h1>Contáctenos</h1>
-      <p>Estamos listos para ayudarle con sus proyectos en holografía.</p>
-    </section>
+  <section class="hero glass-inner">
+    <h1>Contáctenos</h1>
+    <p>Estamos listos para ayudarle a integrar soluciones holográficas personalizadas en su empresa.</p>
+  </section>
 
-    <section class="contact-section glass-inner">
-      <div class="contact-form">
-        <h2>Formulario de contacto</h2>
-        <form action="mailto:info@hologramascr.com" method="post" enctype="text/plain">
-          <label for="name">Nombre:</label>
-          <input type="text" id="name" name="name" required />
-
-          <label for="email">Correo electrónico:</label>
-          <input type="email" id="email" name="email" required />
-
-          <label for="message">Mensaje:</label>
-          <textarea id="message" name="message" rows="6" required></textarea>
-
-          <button type="submit" class="btn-primary">Enviar</button>
-        </form>
+  <section class="contact-form glass-inner">
+    <form id="form-contacto" action="#" method="post" novalidate>
+      <div class="form-group">
+        <label for="nombre">Nombre completo</label>
+        <input type="text" id="nombre" name="nombre" required placeholder="Su nombre completo" />
       </div>
 
-      <div class="contact-info">
-        <h2>Información de contacto</h2>
-        <p><strong>Correo:</strong> info@hologramascr.com</p>
-        <p><strong>Teléfono:</strong> +506 8888-8888</p>
-        <p><strong>Ubicación:</strong> San José, Costa Rica</p>
-        <!-- Aquí podrías insertar Google Maps más adelante -->
+      <div class="form-group">
+        <label for="email">Correo electrónico</label>
+        <input type="email" id="email" name="email" required placeholder="su@email.com" />
       </div>
-    </section>
-  </main>
+
+      <div class="form-group">
+        <label for="mensaje">Mensaje</label>
+        <textarea id="mensaje" name="mensaje" rows="5" required placeholder="Escriba su mensaje aquí..."></textarea>
+      </div>
+
+      <button type="submit" class="btn-primary">Enviar Mensaje</button>
+      <p id="form-msg" class="form-msg"></p>
+    </form>
+  </section>
+</main>
+
 
   <!-- Pie de página glass -->
   <footer class="glass">

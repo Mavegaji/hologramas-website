@@ -1,6 +1,10 @@
 // js/scripts.js
 
 document.addEventListener('DOMContentLoaded', () => {
+  particlesJS.load('particles-js', 'js/particles-config.json');
+});
+
+document.addEventListener('DOMContentLoaded', () => {
   // Navbar active link highlighting
   const links = document.querySelectorAll('.nav-links a');
   links.forEach(link => {
@@ -21,4 +25,9 @@ document.addEventListener('DOMContentLoaded', () => {
       contactForm.reset();
     });
   }
+
+  document.addEventListener('DOMContentLoaded', () => {
+  particlesJS.load('particles-js', 'js/particles-config.json');
+   });
+
 });

@@ -3,73 +3,50 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Soluciones de tecnología holográfica en Costa Rica. Venta, mantenimiento y diseño para empresas de alto valor agregado." />
-  <title>Hologramas CR | Tecnología Holográfica Profesional</title>
+  <meta name="description" content="Tecnología holográfica 5D en Costa Rica. Equipos y soluciones visuales de vanguardia." />
+  <title>Hologramas CR | Futuro Visual</title>
   <link rel="stylesheet" href="css/styles.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap" rel="stylesheet">
   <link rel="icon" href="images/logo.png" type="image/png">
-
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&family=Outfit&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header class="main-header container">
-  <img src="images/logo.png" alt="Logo Hologramas CR" class="logo" />
-  <nav>
-    <ul class="nav-links" id="nav-links">
-      <li><a href="index.html">Inicio</a></li>
-      <li><a href="about.html">Nosotros</a></li>
-      <li><a href="services.html">Servicios</a></li>
-      <li><a href="products.html">Productos</a></li>
-      <li><a href="contact.html">Contacto</a></li>
-    </ul>
-    <div class="menu-toggle" id="menu-toggle" aria-label="Toggle menu" role="button" tabindex="0">
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
-  </nav>
-</header>
+  <!-- Fondo de partículas -->
+  <div id="particles-js"></div>
 
-
-  <section class="hero">
+  <!-- Encabezado estilo glassmorphism -->
+  <header class="glass-header">
     <div class="container">
-      <h1>Innovación Holográfica para Empresas Visionarias</h1>
-      <p>Somos el socio tecnológico ideal para la transformación visual de su marca.</p>
-      <a href="products.html" class="btn-primary">Ver Productos</a>
+      <img src="images/logo.png" alt="Logo Hologramas CR" class="logo" />
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="about.html">Nosotros</a></li>
+          <li><a href="services.html">Servicios</a></li>
+          <li><a href="products.html">Productos</a></li>
+          <li><a href="contact.html">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Sección principal -->
+  <section class="hero glass">
+    <div class="container">
+      <h1>Visualiza el Futuro</h1>
+      <p>Soluciones holográficas 5D para empresas que lideran el mañana.</p>
+      <a href="products.html" class="btn-primary">Explorar Productos</a>
     </div>
   </section>
 
-  <section class="features">
-    <div class="container">
-      <h2>Nuestras Soluciones</h2>
-      <div class="feature-grid">
-        <div class="feature-item">
-          <img src="images/product1.jpg" alt="Producto holográfico 1">
-          <h3>Equipos Holográficos</h3>
-          <p>Desde ventiladores LED hasta vitrinas interactivas.</p>
-        </div>
-        <div class="feature-item">
-          <img src="images/service1.jpg" alt="Servicio de mantenimiento">
-          <h3>Mantenimiento Especializado</h3>
-          <p>Soporte técnico preventivo y correctivo en todo el país.</p>
-        </div>
-        <div class="feature-item">
-          <img src="images/design1.jpg" alt="Diseño de contenido">
-          <h3>Diseño 3D Personalizado</h3>
-          <p>Contenidos holográficos únicos y adaptados a su marca.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <footer>
+  <footer class="glass">
     <div class="container">
       <p>&copy; 2025 Hologramas CR. Todos los derechos reservados.</p>
       <p><a href="mailto:info@hologramascr.com">info@hologramascr.com</a> | San José, Costa Rica</p>
     </div>
   </footer>
 
-  <script src="js/scripts.js"></script>
-  <script src="js/menu.js"></script>
-
+  <!-- Librería y scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script src="js/script.js"></script>
 </body>
 </html>

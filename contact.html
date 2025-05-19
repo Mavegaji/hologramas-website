@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contacto - Hologramas Costa Rica</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="main-header container">
+    <img src="img/logo.png" alt="Logo Hologramas CR" class="logo" />
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="about.html">Acerca de Nosotros</a></li>
+        <li><a href="products.html">Productos</a></li>
+        <li><a href="services.html">Servicios</a></li>
+        <li><a href="contact.html" aria-current="page">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h1>Contáctenos</h1>
+      <p>Estamos listos para ayudarle con sus proyectos en holografía.</p>
+    </section>
+
+    <section class="contact-section">
+      <div class="contact-form">
+        <h2>Formulario de contacto</h2>
+        <form action="mailto:info@hologramascr.com" method="post" enctype="text/plain">
+          <label for="name">Nombre:</label>
+          <input type="text" id="name" name="name" required />
+
+          <label for="email">Correo electrónico:</label>
+          <input type="email" id="email" name="email" required />
+
+          <label for="message">Mensaje:</label>
+          <textarea id="message" name="message" rows="6" required></textarea>
+
+          <button type="submit" class="btn-primary">Enviar</button>
+        </form>
+      </div>
+
+      <div class="contact-info">
+        <h2>Información de contacto</h2>
+        <p><strong>Correo:</strong> info@hologramascr.com</p>
+        <p><strong>Teléfono:</strong> +506 8888-8888</p>
+        <p><strong>Ubicación:</strong> San José, Costa Rica</p>
+        <!-- Aquí podríamos integrar un mapa de Google Maps si se desea -->
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Hologramas Costa Rica. Todos los derechos reservados.</p>
+  </footer>
+
+  <script src="js/scripts.js"></script>
+</body>
+</html>

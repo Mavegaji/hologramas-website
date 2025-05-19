@@ -33,23 +33,48 @@
     <h1>Contáctenos</h1>
     <p>Estamos listos para ayudarle a integrar soluciones holográficas personalizadas en su empresa.</p>
   </section>
+
   <section class="contact-form glass-inner">
-    <form id="form-contacto" action="https://formspree.io/f/xyzwvjnk" method="POST">
-      <label for="nombre">Nombre</label>
+  <form id="form-contacto" action="https://formspree.io/f/xyzwvjnk" method="POST" class="form-grid">
+    
+    <div class="form-group">
+      <label for="nombre">Nombre completo *</label>
       <input type="text" name="nombre" id="nombre" required>
+    </div>
 
-      <label for="email">Correo electrónico</label>
+    <div class="form-group">
+      <label for="cedula">Cédula</label>
+      <input type="text" name="cedula" id="cedula">
+    </div>
+
+    <div class="form-group">
+      <label for="empresa">Empresa</label>
+      <input type="text" name="empresa" id="empresa">
+    </div>
+
+    <div class="form-group">
+      <label for="telefono">Número de teléfono</label>
+      <input type="tel" name="telefono" id="telefono">
+    </div>
+
+    <div class="form-group">
+      <label for="email">Correo electrónico *</label>
       <input type="email" name="email" id="email" required>
+    </div>
 
-      <label for="mensaje">Mensaje</label>
+    <div class="form-group full">
+      <label for="mensaje">Mensaje *</label>
       <textarea name="mensaje" id="mensaje" rows="5" required></textarea>
+    </div>
 
+    <div class="form-group full">
       <button type="submit" class="btn-primary">Enviar</button>
-      <p id="respuesta-formulario" style="margin-top: 1rem; color: var(--primary);"></p>
+    </div>
 
-    </form>
+    <p id="respuesta-formulario" style="margin-top: 1rem; color: var(--primary);"></p>
+  </form>
+</section>
 
-  </section>
 </main>
 
 

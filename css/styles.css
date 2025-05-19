@@ -201,5 +201,34 @@ footer a {
   line-height: 1.6;
 }
 
+.cta {
+  text-align: center;
+  padding: 3rem 2rem;
+  margin-top: 4rem;
+  border: 2px dashed var(--primary);
+  border-radius: 16px;
+  background: rgba(0, 240, 255, 0.05);
+}
+
+.cta h2 {
+  font-size: 2rem;
+  font-family: var(--font-future);
+  color: var(--primary);
+  margin-bottom: 1rem;
+  text-shadow: 0 0 8px var(--primary);
+}
+
+.cta p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  color: #ddd;
+}
+
+.cta .btn-primary {
+  font-size: 1.1rem;
+  padding: 0.75rem 2rem;
+  cursor: pointer;
+}
+
 
 

@@ -8,15 +8,14 @@
   <link rel="icon" href="images/logo.png" type="image/png" />
 </head>
 <body>
-  <!-- Fondo dinámico -->
   <div id="particles-js"></div>
 
-  <!-- Encabezado glassmorphism -->
   <header class="main-header glass">
     <div class="container">
       <img src="images/logo.png" alt="Logo Hologramas CR" class="logo" />
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">☰</button>
       <nav>
-        <ul class="nav-links">
+        <ul class="nav-links" id="navLinks">
           <li><a href="index.html">Inicio</a></li>
           <li><a href="about.html" aria-current="page">Acerca de Nosotros</a></li>
           <li><a href="products.html">Productos</a></li>
@@ -27,7 +26,6 @@
     </div>
   </header>
 
-  <!-- Contenido principal -->
   <main class="container glass content">
     <section class="hero glass-inner">
       <h1>Acerca de Hologramas Costa Rica</h1>
@@ -57,15 +55,20 @@
     </section>
   </main>
 
-  <!-- Pie de página glass -->
   <footer class="glass">
     <div class="container">
       <p>&copy; 2025 Hologramas Costa Rica. Todos los derechos reservados.</p>
     </div>
   </footer>
 
-  <!-- Scripts -->
   <script src="js/particles.min.js"></script>
   <script src="js/script.js"></script>
+  <script>
+    const toggleBtn = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+    toggleBtn.addEventListener("click", () => {
+      navLinks.classList.toggle("show");
+    });
+  </script>
 </body>
 </html>

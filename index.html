@@ -13,12 +13,17 @@
   <!-- Fondo de partículas -->
   <div id="particles-js"></div>
 
-  <!-- Encabezado estilo glassmorphism -->
+  <!-- Encabezado estilo glassmorphism con menú hamburguesa -->
   <header class="glass-header">
     <div class="container">
       <img src="images/logo.png" alt="Logo Hologramas CR" class="logo" />
+
+      <!-- Botón hamburguesa -->
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">☰</button>
+
+      <!-- Menú de navegación -->
       <nav>
-        <ul class="nav-links">
+        <ul class="nav-links" id="navLinks">
           <li><a href="index.html">Inicio</a></li>
           <li><a href="about.html">Nosotros</a></li>
           <li><a href="services.html">Servicios</a></li>
@@ -48,5 +53,15 @@
   <!-- Librería y scripts -->
   <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
   <script src="js/script.js"></script>
+
+  <!-- JS para menú hamburguesa -->
+  <script>
+    const toggleBtn = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+
+    toggleBtn.addEventListener("click", () => {
+      navLinks.classList.toggle("show");
+    });
+  </script>
 </body>
 </html>

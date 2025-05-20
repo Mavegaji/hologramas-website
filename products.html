@@ -1,12 +1,22 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Productos - Hologramas Costa Rica</title>
-  <link rel="stylesheet" href="css/styles.css" />
-  <link rel="icon" href="images/logo.png" type="image/png" />
-</head>
+<header class="main-header glass">
+  <div class="container">
+    <img src="images/logo.png" alt="Logo Hologramas CR" class="logo" />
+    <nav class="nav-links">
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="about.html">Acerca de Nosotros</a></li>
+        <li><a href="products.html" aria-current="page">Productos</a></li>
+        <li><a href="services.html">Servicios</a></li>
+        <li><a href="contact.html">Contacto</a></li>
+      </ul>
+    </nav>
+    <button class="hamburger" aria-label="Menú">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
 <body>
   <!-- Fondo dinámico -->
   <div id="particles-js"></div>
@@ -71,5 +81,16 @@
   <!-- Scripts -->
   <script src="js/particles.min.js"></script>
   <script src="js/script.js"></script>
+  <!-- Agregado antes del cierre </body> -->
+  <script>
+     const hamburger = document.querySelector('.hamburger');
+     const navLinks = document.querySelector('.nav-links');
+     
+     hamburger.addEventListener('click', () => {
+     navLinks.classList.toggle('active');
+     hamburger.classList.toggle('active');
+  });
+  </script>
+
 </body>
 </html>

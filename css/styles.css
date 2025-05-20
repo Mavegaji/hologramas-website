@@ -326,5 +326,25 @@ footer a {
   background-color: #0056b3; /* o ajustalo a tu color */
 }
 
+@media (max-width: 768px) {
+  .glass-header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    width: 100%;
+    gap: 1rem;
+    margin-left: 0;
+    margin-top: 1rem;
+  }
+
+  .nav-links a {
+    font-size: 1.2rem;
+  }
+}
+
 
 

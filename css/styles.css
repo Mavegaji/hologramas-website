@@ -292,3 +292,37 @@ footer a {
     grid-template-columns: 1fr;
   }
 }
+
+
+/* Ocultar menú en móviles por defecto */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: var(--glass);
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: 10px;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+    font-size: 2rem;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: var(--primary);
+    margin-left: auto;
+  }
+}
+
+
+
+
+
+

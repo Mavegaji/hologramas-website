@@ -1,21 +1,31 @@
-// js/scripts.js
+// js/script.js
 
 document.addEventListener('DOMContentLoaded', () => {
+  // Inicializar Partículas
   particlesJS.load('particles-js', 'js/particles-config.json');
-});
 
-document.addEventListener('DOMContentLoaded', () => {
-  // Navbar active link highlighting
+  // Resaltar el enlace actual del menú
   const links = document.querySelectorAll('.nav-links a');
+  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
   links.forEach(link => {
-    if (link.getAttribute('href') === window.location.pathname.split('/').pop()) {
+    if (link.getAttribute('href') === currentPage) {
       link.setAttribute('aria-current', 'page');
     } else {
       link.removeAttribute('aria-current');
     }
   });
 
-  // Contact form handling (if exists)
+  // Lógica de menú hamburguesa
+  const toggleBtn = document.getElementById("menuToggle");
+  const navLinks = document.getElementById("navLinks");
+
+  if (toggleBtn && navLinks) {
+    toggleBtn.addEventListener("click", () => {
+      navLinks.classList.toggle("show");
+    });
+  }
+
+  // Manejo del formulario de contacto con ID 'contact-form'
   const contactForm = document.querySelector('form#contact-form');
   if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
@@ -26,25 +36,19 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  document.addEventListener('DOMContentLoaded', () => {
-  particlesJS.load('particles-js', 'js/particles-config.json');
-   });
-
-});
-
-document.addEventListener("DOMContentLoaded", () => {
+  // Manejo del formulario con ID 'form-contacto' y mensaje
   const form = document.getElementById("form-contacto");
   const msg = document.getElementById("form-msg");
 
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
-    msg.textContent = "Mensaje enviado correctamente. ¡Gracias por contactarnos!";
-    form.reset();
+  if (form && msg) {
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      msg.textContent = "Mensaje enviado correctamente. ¡Gracias por contactarnos!";
+      form.reset();
 
-    setTimeout(() => {
-      msg.textContent = "";
-    }, 5000);
-  });
+      setTimeout(() => {
+        msg.textContent = "";
+      }, 5000);
+    });
+  }
 });
-
-

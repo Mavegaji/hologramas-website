@@ -1,31 +1,20 @@
 // js/script.js
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Inicializar Partículas
+  // Cargar partículas
   particlesJS.load('particles-js', 'js/particles-config.json');
 
-  // Resaltar el enlace actual del menú
+  // Navbar active link highlighting
   const links = document.querySelectorAll('.nav-links a');
-  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
   links.forEach(link => {
-    if (link.getAttribute('href') === currentPage) {
+    if (link.getAttribute('href') === window.location.pathname.split('/').pop()) {
       link.setAttribute('aria-current', 'page');
     } else {
       link.removeAttribute('aria-current');
     }
   });
 
-  // Lógica de menú hamburguesa
-  const toggleBtn = document.getElementById("menuToggle");
-  const navLinks = document.getElementById("navLinks");
-
-  if (toggleBtn && navLinks) {
-    toggleBtn.addEventListener("click", () => {
-      navLinks.classList.toggle("show");
-    });
-  }
-
-  // Manejo del formulario de contacto con ID 'contact-form'
+  // Contact form 1
   const contactForm = document.querySelector('form#contact-form');
   if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
@@ -36,10 +25,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Manejo del formulario con ID 'form-contacto' y mensaje
+  // Contact form 2
   const form = document.getElementById("form-contacto");
   const msg = document.getElementById("form-msg");
-
   if (form && msg) {
     form.addEventListener("submit", function (e) {
       e.preventDefault();
@@ -49,6 +37,16 @@ document.addEventListener('DOMContentLoaded', () => {
       setTimeout(() => {
         msg.textContent = "";
       }, 5000);
+    });
+  }
+
+  // ======= NUEVO: Menú móvil =========
+  const menuToggle = document.querySelector('.menu-toggle');
+  const navLinks = document.querySelector('.nav-links');
+
+  if (menuToggle && navLinks) {
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
     });
   }
 });

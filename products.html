@@ -7,27 +7,24 @@
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
-  <!-- Fondo dinámico -->
   <div id="particles-js"></div>
 
-  <!-- Encabezado -->
   <header class="main-header glass">
     <div class="container">
       <img src="images/logo.png" alt="Logo Hologramas CR" class="logo" />
-      <nav class="nav-links">
-        <ul>
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">☰</button>
+      <nav>
+        <ul class="nav-links" id="navLinks">
           <li><a href="index.html">Inicio</a></li>
-          <li><a href="about.html">Acerca de Nosotros</a></li>
-          <li><a href="products.html" aria-current="page">Productos</a></li>
+          <li><a href="about.html" aria-current="page">Acerca de Nosotros</a></li>
+          <li><a href="products.html">Productos</a></li>
           <li><a href="services.html">Servicios</a></li>
           <li><a href="contact.html">Contacto</a></li>
         </ul>
       </nav>
-      <button class="hamburger" aria-label="Menú">
-        <span></span><span></span><span></span>
-      </button>
     </div>
   </header>
+
 
   <!-- Contenido principal -->
   <main class="container glass content">

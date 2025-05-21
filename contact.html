@@ -9,28 +9,23 @@
   <script src="https://www.google.com/recaptcha/api.js" async defer></script> <!-- 🔹 reCAPTCHA -->
 </head>
 <body>
-  ...
+   <div id="particles-js"></div>
 
-  <!-- Agregado al inicio del <body>, después de <body> -->
-<div id="particles-js"></div>
-
-<header class="main-header glass">
-  <div class="container">
-    <img src="images/logo.png" alt="Logo Hologramas CR" class="logo" />
-    <nav class="nav-links">
-      <ul>
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="about.html">Acerca de Nosotros</a></li>
-        <li><a href="products.html">Productos</a></li>
-        <li><a href="services.html">Servicios</a></li>
-        <li><a href="contact.html" aria-current="page">Contacto</a></li>
-      </ul>
-    </nav>
-    <button class="hamburger" aria-label="Menú">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</header>
+  <header class="main-header glass">
+    <div class="container">
+      <img src="images/logo.png" alt="Logo Hologramas CR" class="logo" />
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">☰</button>
+      <nav>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="about.html" aria-current="page">Acerca de Nosotros</a></li>
+          <li><a href="products.html">Productos</a></li>
+          <li><a href="services.html">Servicios</a></li>
+          <li><a href="contact.html">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
   <section class="contact-form glass-inner">
     <form id="form-contacto" action="https://formspree.io/f/xyzwvjnk" method="POST" class="form-grid">

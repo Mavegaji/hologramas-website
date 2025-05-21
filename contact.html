@@ -108,14 +108,15 @@
       }
     });
   </script>
-  <!-- Agregado antes del cierre </body> -->
+  <script src="js/particles.min.js"></script>
+<script src="js/script.js"></script>
 <script>
-  const hamburger = document.querySelector('.hamburger');
-  const navLinks = document.querySelector('.nav-links');
+  const menuToggle = document.getElementById('menuToggle');
+  const navLinks = document.getElementById('navLinks');
 
-  hamburger.addEventListener('click', () => {
+  menuToggle.addEventListener('click', () => {
     navLinks.classList.toggle('active');
-    hamburger.classList.toggle('active');
+    menuToggle.classList.toggle('active');
   });
 </script>
 

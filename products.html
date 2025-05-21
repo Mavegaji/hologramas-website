@@ -67,17 +67,19 @@
     </div>
   </footer>
 
-  <!-- Scripts -->
   <script src="js/particles.min.js"></script>
-  <script src="js/script.js"></script>
-  <script>
-    const hamburger = document.querySelector('.hamburger');
-    const navLinks = document.querySelector('.nav-links');
-    
-    hamburger.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
-      hamburger.classList.toggle('active');
-    });
-  </script>
+<script src="js/script.js"></script>
+<script>
+  const menuToggle = document.getElementById('menuToggle');
+  const navLinks = document.getElementById('navLinks');
+
+  menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+    menuToggle.classList.toggle('active');
+  });
+</script>
+
+
+
 </body>
 </html>

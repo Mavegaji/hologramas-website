@@ -364,6 +364,23 @@ footer a {
   }
 }
 
+@media (max-width: 768px) {
+  .main-header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .logo {
+    height: 48px;
+  }
+
+  .menu-toggle {
+    margin-left: auto;
+  }
+}
+
 
 
 

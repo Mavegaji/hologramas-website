@@ -410,6 +410,14 @@ body, .glass, .glass-inner {
   }
 }
 
+/* Habilitar menú también con clase .show (como en index.html) */
+@media (max-width: 768px) {
+  .nav-links.show {
+    display: flex;
+  }
+}
+
+
 
 
 

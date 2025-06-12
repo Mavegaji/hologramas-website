@@ -381,6 +381,13 @@ footer a {
   }
 }
 
+/* Prevent word overflow globally */
+body, .glass, .glass-inner {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
 
 
 

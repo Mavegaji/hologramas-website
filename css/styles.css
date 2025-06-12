@@ -381,24 +381,34 @@ footer a {
   }
 }
 
-/* Evita que las palabras se salgan del contenedor */
+/* Estilo general: no cortes palabras, no uses guiones */
 body, .glass, .glass-inner {
   word-wrap: break-word;
   overflow-wrap: break-word;
   hyphens: none;
 }
 
-/* Ajusta el tamaño del texto automáticamente y evita guiones */
+/* Tamaño normal para escritorio */
 .glass-inner h1,
 .glass-inner h2,
 .glass-inner p {
-  font-size: clamp(1rem, 2.5vw, 2rem);
-  overflow-wrap: break-word;
-  word-wrap: break-word;
-  hyphens: none;
+  font-size: 1.5rem; /* o el tamaño que estabas usando antes */
 }
 
+/* SOLO en pantallas pequeñas: reducir ligeramente */
+@media (max-width: 600px) {
+  .glass-inner h1 {
+    font-size: 1.25rem;
+  }
 
+  .glass-inner h2 {
+    font-size: 1.1rem;
+  }
+
+  .glass-inner p {
+    font-size: 0.95rem;
+  }
+}
 
 
 

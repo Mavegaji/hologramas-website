@@ -381,11 +381,21 @@ footer a {
   }
 }
 
-/* Prevent word overflow globally */
+/* Evita que las palabras se salgan del contenedor */
 body, .glass, .glass-inner {
   word-wrap: break-word;
   overflow-wrap: break-word;
-  hyphens: auto;
+  hyphens: none;
+}
+
+/* Ajusta el tamaño del texto automáticamente y evita guiones */
+.glass-inner h1,
+.glass-inner h2,
+.glass-inner p {
+  font-size: clamp(1rem, 2.5vw, 2rem);
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: none;
 }
 
 

@@ -1,68 +1,99 @@
+// js/cart.js
+
 let carrito = [];
 
 document.addEventListener("DOMContentLoaded", () => {
-  const cartToggleBtn = document.getElementById("cartToggle");
-  const cartPanel = document.getElementById("cartPanel");
-  const cartItems = document.getElementById("cartItems");
-  const cartTotal = document.getElementById("cartTotal");
-  const checkoutBtn = document.getElementById("checkoutBtn");
+  const productList = document.getElementById("productList");
 
-  // Mostrar/ocultar carrito
-  cartToggleBtn.addEventListener("click", () => {
-    cartPanel.classList.toggle("hidden");
-  });
+  if (productList) {
+    productos.forEach(prod => {
+      const article = document.createElement("article");
+      article.className = "product-card glass-inner";
+      article.innerHTML = `
+        <h2>${prod.nombre}</h2>
+        <img src="images/${prod.imagen}" alt="${prod.nombre}" />
+        <p>${prod.stock} unidades, ${prod.diametro} cm de diámetro. Precio: $${prod.precio}</p>
+        <button class="btn-primary agregar-carrito" data-id="${prod.id}">Agregar al carrito</button>
+      `;
+      productList.appendChild(article);
+    });
 
-  // Escuchar clicks de "Agregar al carrito"
-  document.body.addEventListener("click", (e) => {
-    if (e.target.classList.contains("btn-add-cart")) {
-      const id = parseInt(e.target.dataset.id);
-      agregarAlCarrito(id);
-      renderizarCarrito();
-    }
-  });
+    document.querySelectorAll(".agregar-carrito").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const id = parseInt(btn.dataset.id);
+        const producto = productos.find(p => p.id === id);
+        const itemEnCarrito = carrito.find(p => p.id === id);
 
-  function agregarAlCarrito(idProducto) {
-    const producto = productos.find(p => p.id === idProducto);
-    const enCarrito = carrito.find(item => item.id === idProducto);
-
-    if (producto && producto.stock > 0) {
-      if (enCarrito) {
-        if (enCarrito.cantidad < producto.stock) {
-          enCarrito.cantidad++;
+        if (itemEnCarrito) {
+          itemEnCarrito.cantidad += 1;
         } else {
-          alert("No hay más stock disponible.");
+          carrito.push({ ...producto, cantidad: 1 });
         }
-      } else {
-        carrito.push({ ...producto, cantidad: 1 });
-      }
-    }
+
+        renderizarCarrito();
+      });
+    });
   }
 
-  function renderizarCarrito() {
-    cartItems.innerHTML = "";
-    let total = 0;
+  renderizarCarrito(); // Llamar al cargar en cualquier página
+});
 
-    if (carrito.length === 0) {
-      cartItems.innerHTML = "<li>Tu carrito está vacío.</li>";
-    } else {
-      carrito.forEach(item => {
-        const li = document.createElement("li");
-        li.textContent = `${item.nombre} x${item.cantidad} - $${item.precio * item.cantidad}`;
-        cartItems.appendChild(li);
-        total += item.precio * item.cantidad;
+function renderizarCarrito() {
+  const cartPanel = document.getElementById("cartPanel");
+  if (!cartPanel) return;
+
+  cartPanel.innerHTML = "<h3>Carrito</h3>";
+
+  if (carrito.length === 0) {
+    cartPanel.innerHTML += "<p>Tu carrito está vacío.</p>";
+    document.getElementById("paypal-button-container")?.remove();
+    return;
+  }
+
+  const ul = document.createElement("ul");
+  let total = 0;
+
+  carrito.forEach(item => {
+    const li = document.createElement("li");
+    li.innerText = `${item.nombre} x${item.cantidad} - $${(item.precio * item.cantidad).toFixed(2)}`;
+    ul.appendChild(li);
+    total += item.precio * item.cantidad;
+  });
+
+  cartPanel.appendChild(ul);
+  cartPanel.innerHTML += `<p><strong>Total: $${total.toFixed(2)}</strong></p>`;
+
+  // Contenedor para el botón de PayPal
+  let paypalDiv = document.getElementById("paypal-button-container");
+  if (!paypalDiv) {
+    paypalDiv = document.createElement("div");
+    paypalDiv.id = "paypal-button-container";
+    cartPanel.appendChild(paypalDiv);
+  }
+
+  renderizarPaypal(total);
+}
+
+function renderizarPaypal(total) {
+  const container = document.getElementById("paypal-button-container");
+  container.innerHTML = ""; // Limpia antes de renderizar
+
+  paypal.Buttons({
+    createOrder: (data, actions) => {
+      return actions.order.create({
+        purchase_units: [{
+          amount: {
+            value: total.toFixed(2)
+          }
+        }]
+      });
+    },
+    onApprove: (data, actions) => {
+      return actions.order.capture().then(details => {
+        alert("Pago completado por " + details.payer.name.given_name);
+        carrito = [];
+        renderizarCarrito();
       });
     }
-
-    cartTotal.textContent = `Total: $${total.toFixed(2)}`;
-  }
-
-  // Simula paso a checkout
-  checkoutBtn.addEventListener("click", () => {
-    if (carrito.length === 0) {
-      alert("El carrito está vacío.");
-    } else {
-      alert("Aquí iría la pasarela de pago (PayPal, etc).");
-      // Aquí se puede integrar PayPal o Stripe
-    }
-  });
-});
+  }).render("#paypal-button-container");
+}

@@ -15,55 +15,65 @@
   <div class="holo-ring"></div>
   <div class="holo-ring"></div>
 </div>
-  <div id="particles-js"></div>
+<div id="particles-js"></div>
 
-  <header class="main-header glass">
-    <div class="container">
-      <a href="https://hologramas.cr">
+<header class="main-header glass">
+  <div class="container">
+    <a href="https://hologramas.cr">
       <img src="images/logo.png" alt="Logo Hologramas CR" class="logo" />
-      </a>
-      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">☰</button>
-      <nav>
-        <ul class="nav-links" id="navLinks">
-          <li><a href="index.html">Inicio</a></li>
-          <li><a href="about.html" aria-current="page">Acerca de Nosotros</a></li>
-          <li><a href="products.html">Productos</a></li>
-          <li><a href="services.html">Servicios</a></li>
-          <li><a href="contact.html">Contacto</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">☰</button>
+    <nav>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="about.html" aria-current="page">Acerca de Nosotros</a></li>
+        <li><a href="products.html">Productos</a></li>
+        <li><a href="services.html">Servicios</a></li>
+        <li><a href="contact.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
 
+<!-- Sección principal -->
+<section class="hero glass">
+  <div class="container">
+    <h1>Visualiza el Futuro</h1>
+    <p>Soluciones holográficas 5D para empresas que lideran el mañana.</p>
+    <a href="products.html" class="btn-primary">Explorar Productos</a>
+  </div>
+</section>
 
-  <!-- Sección principal -->
-  <section class="hero glass">
-    <div class="container">
-      <h1>Visualiza el Futuro</h1>
-      <p>Soluciones holográficas 5D para empresas que lideran el mañana.</p>
-      <a href="products.html" class="btn-primary">Explorar Productos</a>
-    </div>
-  </section>
+<!-- 🛒 Panel del carrito (fijo) -->
+<div id="cartPanel" class="glass fixed-cart-panel"></div>
 
-  <footer class="glass">
-    <div class="container">
-      <p>&copy; 2025 Hologramas CR. Todos los derechos reservados.</p>
-      <p><a href="mailto:info@hologramascr.com">info@hologramascr.com</a> | San José, Costa Rica</p>
-    </div>
-  </footer>
+<footer class="glass">
+  <div class="container">
+    <p>&copy; 2025 Hologramas CR. Todos los derechos reservados.</p>
+    <p><a href="mailto:info@hologramascr.com">info@hologramascr.com</a> | San José, Costa Rica</p>
+  </div>
+</footer>
 
-  <!-- Librería y scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-  <script src="js/script.js"></script>
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+<script src="js/script.js"></script>
 
-  <!-- JS para menú hamburguesa -->
-  <script>
-    const toggleBtn = document.getElementById("menuToggle");
-    const navLinks = document.getElementById("navLinks");
+<!-- Menú hamburguesa -->
+<script>
+  const toggleBtn = document.getElementById("menuToggle");
+  const navLinks = document.getElementById("navLinks");
 
-    toggleBtn.addEventListener("click", () => {
-      navLinks.classList.toggle("show");
-    });
-  </script>
+  toggleBtn.addEventListener("click", () => {
+    navLinks.classList.toggle("show");
+  });
+</script>
+
+<!-- 💳 PayPal SDK (coloca tu client-id real aquí) -->
+<script src="https://www.paypal.com/sdk/js?client-id=TU_CLIENT_ID_AQUI&currency=USD"></script>
+
+<!-- Carrito y productos -->
+<script src="js/products.js"></script>
+<script src="js/cart.js"></script>
+
 </body>
 </html>

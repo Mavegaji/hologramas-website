@@ -15,12 +15,12 @@
   <div class="holo-ring"></div>
 </div>
 
-  <div id="particles-js"></div>
+<div id="particles-js"></div>
 
-  <header class="main-header glass">
+<header class="main-header glass">
   <div class="container">
     <a href="https://hologramas.cr">
-    <img src="images/logo.png" alt="Logo Hologramas CR" class="logo" />
+      <img src="images/logo.png" alt="Logo Hologramas CR" class="logo" />
     </a>
     <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">☰</button>
     <nav>
@@ -32,51 +32,60 @@
         <li><a href="contact.html">Contacto</a></li>
       </ul>
     </nav>
+    <button id="cartToggle" class="btn-primary">🛒 Carrito</button>
   </div>
 </header>
 
+<main class="container glass content">
+  <section class="hero glass-inner">
+    <h1>Servicios Profesionales</h1>
+    <p>Apoyamos a su empresa con soluciones completas y personalizadas en holografía.</p>
+  </section>
 
+  <section class="services-list">
+    <article class="service-card glass-inner">
+      <h2>Mantenimiento Preventivo y Correctivo</h2>
+      <p>
+        Aseguramos la operatividad y prolongamos la vida útil de sus equipos holográficos con planes adaptados a sus necesidades.
+      </p>
+    </article>
 
-  <main class="container glass content">
-    <section class="hero glass-inner">
-      <h1>Servicios Profesionales</h1>
-      <p>Apoyamos a su empresa con soluciones completas y personalizadas en holografía.</p>
-    </section>
+    <article class="service-card glass-inner">
+      <h2>Diseño y Desarrollo Personalizado</h2>
+      <p>
+        Creamos soluciones a la medida, integrando tecnología holográfica con sistemas específicos de su industria para maximizar el impacto.
+      </p>
+    </article>
 
-    <section class="services-list">
-      <article class="service-card glass-inner">
-        <h2>Mantenimiento Preventivo y Correctivo</h2>
-        <p>
-          Aseguramos la operatividad y prolongamos la vida útil de sus equipos holográficos con planes adaptados a sus necesidades.
-        </p>
-      </article>
+    <article class="service-card glass-inner">
+      <h2>Consultoría Técnica y Capacitación</h2>
+      <p>
+        Brindamos asesoría experta y formación para su equipo, garantizando el uso eficiente y seguro de las tecnologías holográficas.
+      </p>
+    </article>
+  </section>
+</main>
 
-      <article class="service-card glass-inner">
-        <h2>Diseño y Desarrollo Personalizado</h2>
-        <p>
-          Creamos soluciones a la medida, integrando tecnología holográfica con sistemas específicos de su industria para maximizar el impacto.
-        </p>
-      </article>
+<!-- Carrito -->
+<aside id="cartPanel" class="glass cart-panel hidden">
+  <h2>🛒 Tu Carrito</h2>
+  <ul id="cartItems"></ul>
+  <p id="cartTotal">Total: $0</p>
+  <button class="btn-primary" id="checkoutBtn">Finalizar compra</button>
+</aside>
 
-      <article class="service-card glass-inner">
-        <h2>Consultoría Técnica y Capacitación</h2>
-        <p>
-          Brindamos asesoría experta y formación para su equipo, garantizando el uso eficiente y seguro de las tecnologías holográficas.
-        </p>
-      </article>
-    </section>
-  </main>
-
-  <footer class="glass">
+<footer class="glass">
   <div class="container">
     <p>&copy; 2025 Hologramas CR. Todos los derechos reservados.</p>
     <p><a href="mailto:info@hologramascr.com">info@hologramascr.com</a> | San José, Costa Rica</p>
   </div>
 </footer>
 
-
-  <script src="js/particles.min.js"></script>
-  <script src="js/script.js"></script>
-  
+<!-- Scripts -->
+<script src="js/particles.min.js"></script>
+<script src="js/script.js"></script>
+<script src="js/cart.js"></script>
+<script src="https://www.paypal.com/sdk/js?client-id=sb&currency=USD"></script>
+<!-- Reemplaza "sb" por tu client-id real -->
 </body>
 </html>

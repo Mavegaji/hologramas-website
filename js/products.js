@@ -1,9 +1,9 @@
 const productos = [
-  { nombre: "A80", stock: 8, diametro: 77, precio: 1628, imagen: "a80.jpg" },
-  { nombre: "V20", stock: 7, diametro: 18, precio: 108, imagen: "v20.jpg" },
-  { nombre: "V42", stock: 6, diametro: 43, precio: 143, imagen: "v42.jpg" },
-  { nombre: "P65", stock: 15, diametro: 65, precio: 704, imagen: "p65.jpg" },
-  { nombre: "P80", stock: 10, diametro: 80, precio: 759, imagen: "p80.jpg" }
+  { nombre: "A80", stock: 8, diametro: 77, precio: 1628, imagen: "a80.png" },
+  { nombre: "V20", stock: 7, diametro: 18, precio: 108, imagen: "v20.png" },
+  { nombre: "V42", stock: 6, diametro: 43, precio: 143, imagen: "v42.png" },
+  { nombre: "P65", stock: 15, diametro: 65, precio: 704, imagen: "p65.png" },
+  { nombre: "P80", stock: 10, diametro: 80, precio: 759, imagen: "p80.png" }
 ];
 
 document.addEventListener("DOMContentLoaded", () => {

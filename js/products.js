@@ -1,9 +1,9 @@
 const productos = [
-  { id: 1, nombre: "A80", stock: 8, diametro: 77, precio: 1628, imagen: "a80.jpg" },
-  { id: 2, nombre: "V20", stock: 7, diametro: 18, precio: 108, imagen: "v20.jpg" },
-  { id: 3, nombre: "V42", stock: 6, diametro: 43, precio: 143, imagen: "v42.jpg" },
-  { id: 4, nombre: "P65", stock: 15, diametro: 65, precio: 704, imagen: "p65.jpg" },
-  { id: 5, nombre: "P80", stock: 10, diametro: 80, precio: 759, imagen: "p80.jpg" }
+  { id: 1, nombre: "A80", stock: 8, diametro: 77, precio: 1628, imagen: "a80.png" },
+  { id: 2, nombre: "V20", stock: 7, diametro: 18, precio: 108, imagen: "v20.png" },
+  { id: 3, nombre: "V42", stock: 6, diametro: 43, precio: 143, imagen: "v42.png" },
+  { id: 4, nombre: "P65", stock: 15, diametro: 65, precio: 704, imagen: "p65.png" },
+  { id: 5, nombre: "P80", stock: 10, diametro: 80, precio: 759, imagen: "p80.png" }
 ];
 
 // Renderizado dinámico

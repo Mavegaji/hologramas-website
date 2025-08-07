@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Productos (MODO DIAGNÓSTICO) | Hologramas CR</title>
+    <title>Productos | Hologramas CR</title>
     <link rel="stylesheet" href="css/styles.css" />
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&family=Outfit&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
@@ -19,6 +19,7 @@
 
 <header class="main-header glass">
     <div class="container">
+        
         <div class="header-top">
             <a href="https://hologramas.cr" class="logo-link">
                 <img src="images/logo.png" alt="Logo Hologramas CR" class="logo" />
@@ -33,6 +34,7 @@
                  <i class="fa-solid fa-bars"></i>
             </button>
         </div>
+
         <nav class="main-nav">
             <ul class="nav-links" id="navLinks">
                 <li><a href="index.html">Inicio</a></li>
@@ -42,6 +44,7 @@
                 <li><a href="contact.html">Contacto</a></li>
             </ul>
         </nav>
+
     </div>
 </header>
   
@@ -50,7 +53,9 @@
         <h1>Nuestros Equipos Holográficos</h1>
         <p>Equipos de última generación para aplicaciones industriales, comerciales y educativas.</p>
     </section>
+
     <section class="products-list" id="productList"></section>
+
     <section class="cta glass-inner">
         <h2>¿Listo para llevar tu presentación al siguiente nivel?</h2>
         <p>Solicitá una demostración gratuita.</p>
@@ -68,37 +73,6 @@
 <script src="js/script.js"></script>
 <script src="js/products.js"></script>
 <script src="js/cart.js"></script>
-
-<script>
-    // Alerta 1: Para ver si el script se está ejecutando.
-    alert("Diagnóstico: El script al final del HTML está corriendo.");
-
-    const menuBtn = document.getElementById("menuToggle");
-    const navList = document.getElementById("navLinks");
-
-    // Alerta 2: Para ver si encontró el botón.
-    if (menuBtn) {
-        alert("Diagnóstico: Botón del menú (menuToggle) ENCONTRADO.");
-    } else {
-        alert("¡ERROR! No se encontró el botón con id='menuToggle'. Revisa el HTML.");
-    }
-
-    // Alerta 3: Para ver si encontró la lista de enlaces.
-    if (navList) {
-        alert("Diagnóstico: Lista de enlaces (navLinks) ENCONTRADA.");
-    } else {
-        alert("¡ERROR! No se encontró la lista con id='navLinks'. Revisa el HTML.");
-    }
-
-    // Se asigna el evento de clic.
-    if (menuBtn && navList) {
-        menuBtn.addEventListener("click", () => {
-            // Alerta 4: Para ver si el clic funciona.
-            alert("¡CLICK REGISTRADO!");
-            navList.classList.toggle("active");
-        });
-    }
-</script>
 
 </body>
 </html>

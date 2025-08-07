@@ -18,31 +18,33 @@
 
 <header class="main-header glass">
   <div class="container header-flex">
+    <!-- Logo -->
     <a href="https://hologramas.cr">
       <img src="images/logo.png" alt="Logo Hologramas CR" class="logo" />
     </a>
 
+    <!-- Carrito (solo ícono con número) -->
     <div id="cartPanel" class="cart-panel-header">
-      <button id="cartToggle" aria-label="Ver carrito" class="cart-button">
-        🛒 <span id="cartCount" class="cart-count">0</span>
-      </button>
+      <a href="cart.html" id="cartLink" aria-label="Ver carrito">
+        🛒<span id="cartCount" class="cart-count">0</span>
+      </a>
     </div>
 
+    <!-- Botón de menú móvil -->
     <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">☰</button>
 
+    <!-- Navegación -->
     <nav>
       <ul class="nav-links" id="navLinks">
         <li><a href="index.html">Inicio</a></li>
-        <li><a href="about.html" aria-current="page">Acerca de Nosotros</a></li>
         <li><a href="products.html">Productos</a></li>
-        <li><a href="services.html">Servicios</a></li>
+        <li><a href="about.html">Nosotros</a></li>
         <li><a href="contact.html">Contacto</a></li>
       </ul>
     </nav>
   </div>
 </header>
-
-
+  
 <!-- CONTENIDO PRINCIPAL -->
 <main class="container glass content">
   <section class="hero glass-inner">

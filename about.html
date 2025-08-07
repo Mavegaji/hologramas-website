@@ -1,39 +1,51 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Acerca de Nosotros - Hologramas Costa Rica</title>
-  <link rel="stylesheet" href="css/styles.css" />
-  <link rel="icon" href="images/logo.png" type="image/png" />
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&family=Outfit&display=swap" rel="stylesheet">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Productos | Hologramas CR</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&family=Outfit&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body>
 <div class="holo-rings">
-  <div class="holo-ring"></div>
-  <div class="holo-ring"></div>
-  <div class="holo-ring"></div>
+    <div class="holo-ring"></div>
+    <div class="holo-ring"></div>
+    <div class="holo-ring"></div>
 </div>
 
 <div id="particles-js"></div>
 
 <header class="main-header glass">
-  <div class="container">
-    <a href="https://hologramas.cr">
-      <img src="images/logo.png" alt="Logo Hologramas CR" class="logo" />
-    </a>
+    <div class="container">
+        
+        <div class="header-top">
+            <a href="https://hologramas.cr" class="logo-link">
+                <img src="images/logo.png" alt="Logo Hologramas CR" class="logo" />
+            </a>
+            <div class="cart-panel-header">
+                <a href="cart.html" class="cart-button" aria-label="Ver carrito">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span id="cart-count" class="cart-count">0</span>
+                </a>
+            </div>
+            <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+                 <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
 
-    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">☰</button>
-    <nav>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="about.html">Acerca de Nosotros</a></li>
-        <li><a href="products.html">Productos</a></li>
-        <li><a href="services.html">Servicios</a></li>
-        <li><a href="contact.html">Contacto</a></li>
-      </ul>
-    </nav>
-  </div>
+        <nav class="main-nav">
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="about.html">Acerca de Nosotros</a></li>
+                <li><a href="products.html" aria-current="page">Productos</a></li>
+                <li><a href="services.html">Servicios</a></li>
+                <li><a href="contact.html">Contacto</a></li>
+            </ul>
+        </nav>
+
+    </div>
 </header>
 
 <main class="container glass content">

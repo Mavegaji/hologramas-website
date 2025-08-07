@@ -18,9 +18,33 @@ document.addEventListener("DOMContentLoaded", () => {
       <h2>${prod.nombre}</h2>
       <img src="images/${prod.imagen}" alt="${prod.nombre} Equipo Holográfico" />
       <p>${prod.stock} unidades disponibles, ${prod.diametro} cm de diámetro. Precio: $${prod.precio}</p>
-      <button class="btn-add-cart" data-id="${prod.id}">Agregar al carrito</button>
+      <button class="btn-primary agregar-carrito" data-id="${prod.id}">Agregar al carrito</button>
     `;
 
     productList.appendChild(article);
   });
+  
+  function activarBotonesCarrito() {
+  document.querySelectorAll(".agregar-carrito").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const id = parseInt(btn.dataset.id);
+      const producto = productos.find(p => p.id === id);
+      const itemEnCarrito = carrito.find(p => p.id === id);
+
+      if (itemEnCarrito) {
+        itemEnCarrito.cantidad += 1;
+      } else {
+        carrito.push({ ...producto, cantidad: 1 });
+      }
+
+      renderizarCarrito();
+    });
+  });
+
+    
+}
+
 });
+
+activarBotonesCarrito();
+

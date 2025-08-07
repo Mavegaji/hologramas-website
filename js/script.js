@@ -1,52 +1,62 @@
 // js/script.js
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Cargar partículas
-  particlesJS.load('particles-js', 'js/particles-config.json');
-
-  // Navbar active link highlighting
-  const links = document.querySelectorAll('.nav-links a');
-  links.forEach(link => {
-    if (link.getAttribute('href') === window.location.pathname.split('/').pop()) {
-      link.setAttribute('aria-current', 'page');
-    } else {
-      link.removeAttribute('aria-current');
+    
+    // Cargar partículas de fondo
+    if (typeof particlesJS !== 'undefined') {
+        particlesJS.load('particles-js', 'js/particles-config.json');
     }
-  });
 
-  // Contact form 1
-  const contactForm = document.querySelector('form#contact-form');
-  if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const formData = new FormData(contactForm);
-      alert('Gracias por tu mensaje, ' + formData.get('name') + '. Nos pondremos en contacto pronto.');
-      contactForm.reset();
+    // Resaltar el enlace activo en la barra de navegación
+    const currentPage = window.location.pathname.split('/').pop();
+    const navLinksList = document.querySelectorAll('.nav-links a');
+    
+    navLinksList.forEach(link => {
+        if (link.getAttribute('href') === currentPage) {
+            link.setAttribute('aria-current', 'page');
+        } else {
+            link.removeAttribute('aria-current');
+        }
     });
-  }
 
-  // Contact form 2
-  const form = document.getElementById("form-contacto");
-  const msg = document.getElementById("form-msg");
-  if (form && msg) {
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
-      msg.textContent = "Mensaje enviado correctamente. ¡Gracias por contactarnos!";
-      form.reset();
+    // Manejador para el primer formulario de contacto (si existe)
+    const contactForm1 = document.querySelector('form#contact-form');
+    if (contactForm1) {
+        contactForm1.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const formData = new FormData(contactForm1);
+            alert('Gracias por tu mensaje, ' + formData.get('name') + '. Nos pondremos en contacto pronto.');
+            contactForm1.reset();
+        });
+    }
 
-      setTimeout(() => {
-        msg.textContent = "";
-      }, 5000);
-    });
-  }
+    // Manejador para el segundo formulario de contacto (si existe)
+    const contactForm2 = document.getElementById("form-contacto");
+    const formMsg = document.getElementById("form-msg");
+    if (contactForm2 && formMsg) {
+        contactForm2.addEventListener("submit", function (e) {
+            e.preventDefault();
+            formMsg.textContent = "Mensaje enviado correctamente. ¡Gracias por contactarnos!";
+            contactForm2.reset();
 
-  // ======= NUEVO: Menú móvil =========
-  const menuToggle = document.querySelector('.menu-toggle');
-  const navLinks = document.querySelector('.nav-links');
+            setTimeout(() => {
+                formMsg.textContent = "";
+            }, 5000);
+        });
+    }
 
-  if (menuToggle && navLinks) {
-    menuToggle.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
-    });
-  }
+    // ======================================================
+    // LÓGICA DEL MENÚ MÓVIL (INTEGRADA)
+    // ======================================================
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    if (menuToggle && navLinks) {
+        menuToggle.addEventListener('click', () => {
+            // Esta línea añade o quita la clase 'active' a la lista de enlaces.
+            // El CSS se encargará de mostrar u ocultar el menú basado en esta clase.
+            navLinks.classList.toggle('active');
+        });
+    }
+
 });

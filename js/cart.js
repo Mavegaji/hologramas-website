@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <p>${prod.stock} unidades, ${prod.diametro} cm de diámetro. Precio: $${prod.precio}</p>
         <button class="btn-primary agregar-carrito" data-id="${prod.id}">Agregar al carrito</button>
       `;
-      productList.appendChild(article);
+      //productList.appendChild(article);
     });
 
     document.querySelectorAll(".agregar-carrito").forEach(btn => {

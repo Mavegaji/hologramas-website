@@ -1,80 +1,79 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Productos | Hologramas CR</title>
-  <link rel="stylesheet" href="css/styles.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&family=Outfit&display=swap" rel="stylesheet">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Productos | Hologramas CR</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&family=Outfit&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body>
 <div class="holo-rings">
-  <div class="holo-ring"></div>
-  <div class="holo-ring"></div>
-  <div class="holo-ring"></div>
+    <div class="holo-ring"></div>
+    <div class="holo-ring"></div>
+    <div class="holo-ring"></div>
 </div>
 
 <div id="particles-js"></div>
 
 <header class="main-header glass">
-  <div class="container header-flex">
-    <!-- Logo -->
-    <a href="https://hologramas.cr">
-      <img src="images/logo.png" alt="Logo Hologramas CR" class="logo" />
-    </a>
+    <div class="container header-flex">
+        
+        <a href="https://hologramas.cr" class="logo-link">
+            <img src="images/logo.png" alt="Logo Hologramas CR" class="logo" />
+        </a>
 
-    <!-- Carrito (solo ícono con número) -->
-    <div id="cartPanel" class="cart-panel-header">
-      <a href="cart.html" id="cartLink" aria-label="Ver carrito">
-        🛒<span id="cartCount" class="cart-count">0</span>
-      </a>
+        <div class="header-nav-actions">
+            
+            <nav class="main-nav">
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="products.html">Productos</a></li>
+                    <li><a href="about.html">Nosotros</a></li>
+                    <li><a href="contact.html">Contacto</a></li>
+                </ul>
+            </nav>
+
+            <div class="cart-panel-header">
+                <a href="cart.html" class="cart-button" aria-label="Ver carrito">
+                    <i class="fa-solid fa-cart-shopping"></i> <span id="cart-count" class="cart-count">0</span> </a>
+            </div>
+
+            <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+                 <i class="fa-solid fa-bars"></i> </button>
+
+        </div>
+
     </div>
-
-    <!-- Botón de menú móvil -->
-    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">☰</button>
-
-    <!-- Navegación -->
-    <nav>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="products.html">Productos</a></li>
-        <li><a href="about.html">Nosotros</a></li>
-        <li><a href="contact.html">Contacto</a></li>
-      </ul>
-    </nav>
-  </div>
 </header>
   
-<!-- CONTENIDO PRINCIPAL -->
 <main class="container glass content">
-  <section class="hero glass-inner">
-    <h1>Nuestros Equipos Holográficos</h1>
-    <p>Equipos de última generación para aplicaciones industriales, comerciales y educativas.</p>
-  </section>
+    <section class="hero glass-inner">
+        <h1>Nuestros Equipos Holográficos</h1>
+        <p>Equipos de última generación para aplicaciones industriales, comerciales y educativas.</p>
+    </section>
 
-  <!-- Productos cargados dinámicamente -->
-  <section class="products-list" id="productList"></section>
+    <section class="products-list" id="productList"></section>
 
-  <section class="cta glass-inner">
-    <h2>¿Listo para llevar tu presentación al siguiente nivel?</h2>
-    <p>Solicitá una demostración gratuita y descubrí cómo nuestros equipos holográficos pueden transformar tu negocio.</p>
-    <a href="contact.html" class="btn-primary">Solicitar Demo</a>
-  </section>
+    <section class="cta glass-inner">
+        <h2>¿Listo para llevar tu presentación al siguiente nivel?</h2>
+        <p>Solicitá una demostración gratuita y descubrí cómo nuestros equipos holográficos pueden transformar tu negocio.</p>
+        <a href="contact.html" class="btn-primary">Solicitar Demo</a>
+    </section>
 </main>
 
 <footer class="glass">
-  <div class="container">
-    <p>&copy; 2025 Hologramas CR. Todos los derechos reservados.</p>
-    <p><a href="mailto:info@hologramascr.com">info@hologramascr.com</a> | San José, Costa Rica</p>
-  </div>
+    <div class="container">
+        <p>&copy; 2025 Hologramas CR. Todos los derechos reservados.</p>
+        <p><a href="mailto:info@hologramascr.com">info@hologramascr.com</a> | San José, Costa Rica</p>
+    </div>
 </footer>
 
-<!-- Scripts -->
 <script src="js/particles.min.js"></script>
 <script src="js/script.js"></script>
 <script src="js/products.js"></script>
 <script src="js/cart.js"></script>
-
 
 </body>
 </html>

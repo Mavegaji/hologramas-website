@@ -41,7 +41,7 @@
             <ul class="nav-links" id="navLinks">
                 <li><a href="index.html">Inicio</a></li>
                 <li><a href="about.html">Acerca de Nosotros</a></li>
-                <li><a href="products.html">Productos</a></li>
+                <li><a href="products.html" aria-current="page">Productos</a></li>
                 <li><a href="services.html">Servicios</a></li>
                 <li><a href="contact.html">Contacto</a></li>
             </ul>
@@ -73,8 +73,22 @@
 </footer>
 
 <script src="js/particles.min.js"></script>
-<script src="js/script.js"></script> <script src="js/products.js"></script>
+<script src="js/script.js"></script>
+
+<script src="js/products.js"></script>
 <script src="js/cart.js"></script>
+
+<script>
+    const menuToggleButton = document.getElementById("menuToggle");
+    const navigationLinks = document.getElementById("navLinks");
+
+    if (menuToggleButton && navigationLinks) {
+        menuToggleButton.addEventListener("click", () => {
+            // Usamos la clase "active" que ya está definida en tu CSS
+            navigationLinks.classList.toggle("active");
+        });
+    }
+</script>
 
 </body>
 </html>

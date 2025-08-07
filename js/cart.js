@@ -31,11 +31,13 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         renderizarCarrito();
+        actualizarContadorCarrito();
       });
     });
   }
 
   renderizarCarrito(); // Llamar al cargar en cualquier página
+  actualizarContadorCarrito();
 });
 
 function renderizarCarrito() {
@@ -96,4 +98,11 @@ function renderizarPaypal(total) {
       });
     }
   }).render("#paypal-button-container");
+}
+
+
+function actualizarContadorCarrito() {
+  const contador = document.getElementById("cart-count");
+  const totalItems = carrito.reduce((acc, item) => acc + item.cantidad, 0);
+  contador.textContent = totalItems;
 }

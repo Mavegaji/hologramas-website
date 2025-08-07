@@ -15,12 +15,12 @@
   <div class="holo-ring"></div>
 </div>
 
-  <div id="particles-js"></div>
+<div id="particles-js"></div>
 
-  <header class="main-header glass">
+<header class="main-header glass">
   <div class="container">
     <a href="https://hologramas.cr">
-    <img src="images/logo.png" alt="Logo Hologramas CR" class="logo" />
+      <img src="images/logo.png" alt="Logo Hologramas CR" class="logo" />
     </a>
 
     <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">☰</button>
@@ -33,50 +33,73 @@
         <li><a href="contact.html">Contacto</a></li>
       </ul>
     </nav>
+    <button id="cartToggle" class="btn-primary">🛒 Carrito</button>
   </div>
 </header>
 
+<main class="container glass content">
+  <section class="hero glass-inner">
+    <h1>Acerca de Hologramas Costa Rica</h1>
+    <p>
+      Somos líderes en soluciones holográficas de alta tecnología,
+      especializándonos en equipos y servicios para empresas de alto valor agregado en Costa Rica.
+    </p>
+  </section>
 
-
-  <main class="container glass content">
-    <section class="hero glass-inner">
-      <h1>Acerca de Hologramas Costa Rica</h1>
+  <section class="features">
+    <div class="glass-inner">
+      <h2>Nuestra Misión</h2>
       <p>
-        Somos líderes en soluciones holográficas de alta tecnología,
-        especializándonos en equipos y servicios para empresas de alto valor agregado en Costa Rica.
+        Proveer tecnología holográfica innovadora y servicios personalizados que impulsen la transformación digital y competitividad de nuestros clientes.
       </p>
-    </section>
 
-    <section class="features">
-      <div class="glass-inner">
-        <h2>Nuestra Misión</h2>
-        <p>
-          Proveer tecnología holográfica innovadora y servicios personalizados que impulsen la transformación digital y competitividad de nuestros clientes.
-        </p>
+      <h2>Nuestra Visión</h2>
+      <p>
+        Ser la empresa referente en Latinoamérica en tecnología holográfica aplicada a la industria, comercio y educación.
+      </p>
 
-        <h2>Nuestra Visión</h2>
-        <p>
-          Ser la empresa referente en Latinoamérica en tecnología holográfica aplicada a la industria, comercio y educación.
-        </p>
+      <h2>El Equipo</h2>
+      <p>
+        Contamos con un equipo multidisciplinario de ingenieros, diseñadores y técnicos especializados en holografía, dedicados a crear soluciones a la medida.
+      </p>
+    </div>
+  </section>
+</main>
 
-        <h2>El Equipo</h2>
-        <p>
-          Contamos con un equipo multidisciplinario de ingenieros, diseñadores y técnicos especializados en holografía, dedicados a crear soluciones a la medida.
-        </p>
-      </div>
-    </section>
-  </main>
+<!-- Panel del carrito -->
+<aside id="cartPanel" class="glass cart-panel hidden">
+  <h2>🛒 Tu Carrito</h2>
+  <ul id="cartItems"></ul>
+  <p id="cartTotal">Total: $0</p>
+  <button class="btn-primary" id="checkoutBtn">Finalizar compra</button>
+</aside>
 
-  <footer class="glass">
+<footer class="glass">
   <div class="container">
     <p>&copy; 2025 Hologramas CR. Todos los derechos reservados.</p>
     <p><a href="mailto:info@hologramascr.com">info@hologramascr.com</a> | San José, Costa Rica</p>
   </div>
 </footer>
 
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+<script src="js/particles.min.js"></script>
+<script src="js/script.js"></script>
+<script src="js/products.js"></script>
+<script src="js/cart.js"></script>
 
-  <script src="js/particles.min.js"></script>
-  <script src="js/script.js"></script>
+<!-- Menú hamburguesa -->
+<script>
+  const toggleBtn = document.getElementById("menuToggle");
+  const navLinks = document.getElementById("navLinks");
+
+  toggleBtn.addEventListener("click", () => {
+    navLinks.classList.toggle("show");
+  });
+</script>
+
+<!-- PayPal SDK -->
+<script src="https://www.paypal.com/sdk/js?client-id=sb&currency=USD"></script>
 
 </body>
 </html>

@@ -265,3 +265,113 @@ footer a { color: var(--primary); text-decoration: none; }
   .hero h1 { font-size: 2rem; }
   .hero p { font-size: 1rem; }
 }
+
+/* --- ESTILOS PARA LA PÁGINA DEL CARRITO (cart.html) --- */
+
+.cart-container {
+    padding: 1.5rem;
+}
+
+.cart-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 2rem;
+    color: var(--text-color);
+}
+
+.cart-table th, .cart-table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border-glow);
+}
+
+.cart-table th {
+    font-family: var(--font-future);
+    color: var(--primary);
+    font-size: 1.1rem;
+}
+
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.quantity-controls span {
+    min-width: 20px;
+    text-align: center;
+}
+
+.btn-quantity, .btn-remove {
+    background: transparent;
+    border: 1px solid var(--primary);
+    color: var(--primary);
+    cursor: pointer;
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    font-size: 1.2rem;
+    line-height: 1;
+    transition: all 0.2s ease;
+}
+
+.btn-remove {
+    font-size: 1.5rem;
+    border-color: #e60023; /* Rojo para eliminar */
+    color: #e60023;
+}
+
+.btn-quantity:hover, .btn-remove:hover {
+    background: var(--primary);
+    color: var(--bg);
+}
+
+.btn-remove:hover {
+    background: #e60023;
+    color: white;
+}
+
+.cart-summary {
+    max-width: 400px;
+    margin-left: auto;
+    padding: 1.5rem;
+    border: 1px solid var(--border-glow);
+    border-radius: 10px;
+    background: var(--glass);
+}
+
+.summary-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.75rem;
+    font-size: 1.1rem;
+}
+
+.summary-item.total {
+    font-family: var(--font-future);
+    font-size: 1.4rem;
+    color: var(--primary);
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-glow);
+}
+
+.payment-section {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.payment-section h2 {
+    font-family: var(--font-future);
+    margin-bottom: 1.5rem;
+}
+
+#empty-cart-message {
+    text-align: center;
+    padding: 4rem 0;
+}
+
+#empty-cart-message p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}

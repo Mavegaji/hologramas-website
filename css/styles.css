@@ -467,7 +467,69 @@ body, .glass, .glass-inner {
   cursor: pointer;
 }
 
+/* Estilo para el ícono de carrito */
+.cart-panel-header {
+  position: relative;
+  order: 3;
+}
 
+#cartToggle {
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  position: relative;
+}
 
+#cart-count {
+  position: absolute;
+  top: -8px;
+  right: -10px;
+  background: red;
+  color: white;
+  border-radius: 50%;
+  padding: 2px 6px;
+  font-size: 0.7rem;
+  font-weight: bold;
+}
+
+/* Posicionamiento en pantallas grandes */
+@media (min-width: 768px) {
+  .header-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .cart-panel-header {
+    margin-left: auto;
+  }
+
+  .menu-toggle {
+    display: none;
+  }
+}
+
+/* Posicionamiento en pantallas pequeñas */
+@media (max-width: 767px) {
+  .header-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .cart-panel-header {
+    order: 2;
+    margin: 0 auto;
+  }
+
+  .menu-toggle {
+    order: 3;
+  }
+
+  .logo {
+    order: 1;
+  }
+}
 
 

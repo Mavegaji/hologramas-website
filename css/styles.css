@@ -46,7 +46,7 @@ body {
   position: sticky;
   top: 0;
   z-index: 99;
-  padding: 1rem 0; /* Let the container handle side padding */
+  padding: 1rem 0;
 }
 
 /* Flex container for header elements */
@@ -54,12 +54,12 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
+  gap: 1.5rem;
 }
 
 .logo {
   height: 48px;
-  flex-shrink: 0; /* Prevent logo from shrinking */
+  flex-shrink: 0;
 }
 
 .nav-links {
@@ -85,56 +85,61 @@ body {
 }
 
 .menu-toggle {
-  display: none; /* Hidden by default, shown on mobile */
+  display: none;
   font-size: 2rem;
   background: none;
   border: none;
   color: var(--primary);
   cursor: pointer;
-  z-index: 1001; /* Ensure it's on top */
+  z-index: 1001;
 }
 
-/* --- CART ELEMENTS (Integrated) --- */
+/* --- ESTILOS DE CARRITO (Integración dominante) --- */
 
-/* Wrapper for the cart button in the header */
+/* Contenedor del ícono del carrito en el header */
 .cart-panel-header {
   position: relative;
+  display: flex;
+  align-items: center;
+  margin-left: auto; /* Empuja el carrito y el menú a la derecha en desktop */
 }
 
-/* The cart button itself */
-.cart-button {
+/* Se asume que el carrito es un link <a> con un ícono adentro */
+.cart-panel-header a,
+.cart-panel-header .cart-button { /* Damos estilo a ambos por si usas <a> o <button> */
+  font-size: 1.8rem;
+  text-decoration: none;
+  position: relative;
+  color: var(--primary); /* THEMED: Adaptado al color primario */
   background: none;
   border: none;
-  font-size: 1.8rem;
-  color: var(--primary);
   cursor: pointer;
-  position: relative;
   padding: 0;
   display: flex;
   align-items: center;
 }
 
-/* The notification bubble on the cart icon */
+/* Burbuja de notificación del carrito */
 .cart-count {
-  background-color: var(--primary); /* THEMED */
-  color: var(--bg); /* THEMED for contrast */
-  border-radius: 50%;
-  padding: 0 6px;
-  font-size: 0.75rem;
-  font-weight: bold;
   position: absolute;
   top: -8px;
-  right: -12px;
+  right: -10px;
+  background: var(--primary); /* THEMED: Adaptado al color primario */
+  color: var(--bg); /* THEMED: Adaptado al color de fondo para contraste */
+  font-size: 0.75rem;
+  font-weight: bold;
+  padding: 2px 6px;
+  border-radius: 50%;
   min-width: 18px;
   height: 18px;
   display: flex;
   align-items: center;
   justify-content: center;
-  pointer-events: none; /* So you can click the button underneath */
+  pointer-events: none;
   border: 1px solid var(--bg);
 }
 
-/* The actual dropdown/popup cart panel */
+/* El panel desplegable del carrito */
 .cart-panel {
   position: fixed;
   top: 80px;
@@ -394,45 +399,48 @@ footer a {
   }
 
   /* --- Mobile Header Layout --- */
+  .header-flex {
+    /* Mantenemos el space-between de la regla general */
+    align-items: center;
+  }
+
+  .cart-panel-header {
+    margin-left: 0; /* Reseteamos el margen en móvil */
+  }
+
   .menu-toggle {
     display: block; /* Show the hamburger menu icon */
   }
 
   .nav-links {
-    display: none; /* Hide nav links by default */
+    display: none;
     position: absolute;
-    top: 70px; /* Position below header */
+    top: 70px;
     right: 0;
     width: 100%;
     flex-direction: column;
-    background: rgba(13, 13, 13, 0.95); /* Slightly transparent background */
+    background: rgba(13, 13, 13, 0.95);
     backdrop-filter: blur(10px);
     padding: 1rem;
     border-radius: 0 0 10px 10px;
     border-top: 1px solid var(--primary);
   }
 
-  /* When menu is opened via JS */
   .nav-links.active {
     display: flex;
   }
 
-  /* Forcing order of elements: logo, carrito, menú toggle */
-  .logo { order: 1; }
-  .cart-panel-header { order: 2; }
-  .menu-toggle { order: 3; }
+  /* NUEVO ORDEN DOMINANTE en móviles */
+  .logo { order: 0; }
+  .cart-panel-header { order: 1; }
+  .menu-toggle { order: 2; }
 }
 
 /* For Desktops */
 @media (min-width: 769px) {
-  .header-flex {
-    justify-content: flex-start; /* Align items to the start */
-    gap: 2rem; /* Add space between nav and cart */
-  }
-
-  .logo {
-    margin-right: auto; /* Pushes everything else to the right */
-  }
+  /* No se necesitan reglas adicionales para el header-flex o logo aquí,
+     ya que .cart-panel-header { margin-left: auto; } se encarga
+     de la alineación en pantallas grandes. */
 }
 
 /* SOLO en pantallas pequeñas: reducir ligeramente texto en cards */

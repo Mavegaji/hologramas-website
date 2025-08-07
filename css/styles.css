@@ -22,6 +22,9 @@ body {
   overflow-x: hidden;
   position: relative;
   line-height: 1.6;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: none;
 }
 
 #particles-js {
@@ -35,8 +38,134 @@ body {
   width: 90%;
   max-width: 1200px;
   margin: auto;
-  padding: 2rem 1rem;
 }
+
+/* --- HEADER & NAVIGATION --- */
+
+.glass-header {
+  position: sticky;
+  top: 0;
+  z-index: 99;
+  padding: 1rem 0; /* Let the container handle side padding */
+}
+
+/* Flex container for header elements */
+.header-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.logo {
+  height: 48px;
+  flex-shrink: 0; /* Prevent logo from shrinking */
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  text-decoration: none;
+  font-family: var(--font-future);
+  color: var(--primary);
+  font-weight: 600;
+  transition: 0.3s;
+  padding: 0.5rem 0;
+}
+
+.nav-links a:hover {
+  color: #ffffff;
+  text-shadow: 0 0 10px var(--primary);
+}
+
+.menu-toggle {
+  display: none; /* Hidden by default, shown on mobile */
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: var(--primary);
+  cursor: pointer;
+  z-index: 1001; /* Ensure it's on top */
+}
+
+/* --- CART ELEMENTS (Integrated) --- */
+
+/* Wrapper for the cart button in the header */
+.cart-panel-header {
+  position: relative;
+}
+
+/* The cart button itself */
+.cart-button {
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  color: var(--primary);
+  cursor: pointer;
+  position: relative;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+/* The notification bubble on the cart icon */
+.cart-count {
+  background-color: var(--primary); /* THEMED */
+  color: var(--bg); /* THEMED for contrast */
+  border-radius: 50%;
+  padding: 0 6px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  position: absolute;
+  top: -8px;
+  right: -12px;
+  min-width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none; /* So you can click the button underneath */
+  border: 1px solid var(--bg);
+}
+
+/* The actual dropdown/popup cart panel */
+.cart-panel {
+  position: fixed;
+  top: 80px;
+  right: 20px;
+  background: var(--glass);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid var(--border-glow);
+  padding: 1rem;
+  border-radius: 10px;
+  width: 300px;
+  max-height: 400px;
+  overflow-y: auto;
+  z-index: 999;
+}
+
+.hidden {
+  display: none;
+}
+
+#cartItems {
+  list-style: none;
+  padding-left: 0;
+}
+
+#cartItems li {
+  margin-bottom: 0.5rem;
+}
+
+
+/* --- GENERIC & UTILITY CLASSES --- */
 
 .glass {
   background: var(--glass);
@@ -48,50 +177,25 @@ body {
   transition: all 0.3s ease-in-out;
 }
 
-.glass-header {
-  position: sticky;
-  top: 0;
-  z-index: 99;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: var(--glass);
-  backdrop-filter: blur(20px);
-  padding: 1rem 2rem;
-  border-bottom: 1px solid var(--primary);
-}
-
-.logo {
-  height: 48px;
-}
-
-.nav-links {
-  display: flex;
-  gap: 2rem;
-  list-style: none;
-}
-
-.nav-links a {
-  text-decoration: none;
+.btn-primary {
+  background: transparent;
+  border: 2px solid var(--primary);
+  color: var(--primary);
   font-family: var(--font-future);
-  color: var(--primary);
-  font-weight: 600;
-  transition: 0.3s;
-}
-
-.nav-links a:hover {
-  color: #ffffff;
-  text-shadow: 0 0 10px var(--primary);
-}
-
-.menu-toggle {
-  display: none;
-  font-size: 2rem;
-  background: none;
-  border: none;
-  color: var(--primary);
+  padding: 0.8rem 1.8rem;
+  border-radius: 10px;
+  font-weight: bold;
+  transition: 0.3s ease;
   cursor: pointer;
 }
+
+.btn-primary:hover {
+  background-color: var(--primary);
+  color: var(--bg);
+  box-shadow: 0 0 12px var(--primary);
+}
+
+/* --- PAGE SECTIONS --- */
 
 /* HERO SECTION */
 .hero {
@@ -110,25 +214,6 @@ body {
   font-size: 1.2rem;
   color: #cccccc;
   margin-bottom: 2.5rem;
-}
-
-/* BUTTON */
-.btn-primary {
-  background: transparent;
-  border: 2px solid var(--primary);
-  color: var(--primary);
-  font-family: var(--font-future);
-  padding: 0.8rem 1.8rem;
-  border-radius: 10px;
-  font-weight: bold;
-  transition: 0.3s ease;
-  cursor: pointer;
-}
-
-.btn-primary:hover {
-  background-color: var(--primary);
-  color: var(--bg);
-  box-shadow: 0 0 12px var(--primary);
 }
 
 /* CARDS */
@@ -199,7 +284,7 @@ body {
   margin-bottom: 2rem;
 }
 
-/* FORMULARIO */
+/* FORM */
 .contact-form {
   margin-top: 2rem;
 }
@@ -252,36 +337,6 @@ body {
   text-align: center;
 }
 
-
-
-.cart-panel {
-  position: fixed;
-  top: 80px;
-  right: 20px;
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(10px);
-  padding: 1rem;
-  border-radius: 10px;
-  width: 300px;
-  max-height: 400px;
-  overflow-y: auto;
-  z-index: 999;
-}
-
-.hidden {
-  display: none;
-}
-
-#cartItems {
-  list-style: none;
-  padding-left: 0;
-}
-
-#cartItems li {
-  margin-bottom: 0.5rem;
-}
-
-
 /* FOOTER */
 footer {
   margin-top: 5rem;
@@ -296,61 +351,7 @@ footer a {
   text-decoration: none;
 }
 
-/* RESPONSIVE */
-@media (max-width: 768px) {
-  .glass-header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .nav-links {
-    flex-direction: column;
-    gap: 1rem;
-    width: 100%;
-    margin-top: 1rem;
-  }
-
-  .nav-links a {
-    font-size: 1.2rem;
-  }
-
-  .menu-toggle {
-    display: block;
-  }
-
-  .form-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-
-/* Ocultar menú en móviles por defecto */
-@media (max-width: 768px) {
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    background: var(--glass);
-    margin-top: 1rem;
-    padding: 1rem;
-    border-radius: 10px;
-  }
-
-  .nav-links.active {
-    display: flex;
-  }
-
-  .menu-toggle {
-    display: block;
-    font-size: 2rem;
-    cursor: pointer;
-    background: none;
-    border: none;
-    color: var(--primary);
-    margin-left: auto;
-  }
-}
-
+/* DECORATIVE ELEMENTS */
 .holo-rings {
   position: fixed;
   top: 50%;
@@ -375,161 +376,68 @@ footer a {
   box-shadow: 0 0 12px var(--primary);
 }
 
-.holo-ring:nth-child(2) {
-  animation-delay: 1s;
-}
-
-.holo-ring:nth-child(3) {
-  animation-delay: 2s;
-}
+.holo-ring:nth-child(2) { animation-delay: 1s; }
+.holo-ring:nth-child(3) { animation-delay: 2s; }
 
 @keyframes pulseRing {
-  0% {
-    transform: scale(0.6);
-    opacity: 0.9;
-  }
-  100% {
-    transform: scale(2.5);
-    opacity: 0;
-  }
+  0% { transform: scale(0.6); opacity: 0.9; }
+  100% { transform: scale(2.5); opacity: 0; }
 }
 
+
+/* --- RESPONSIVE STYLES (Consolidated) --- */
+
+/* For Tablets and Mobiles */
 @media (max-width: 768px) {
-  .main-header .container {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* --- Mobile Header Layout --- */
+  .menu-toggle {
+    display: block; /* Show the hamburger menu icon */
+  }
+
+  .nav-links {
+    display: none; /* Hide nav links by default */
+    position: absolute;
+    top: 70px; /* Position below header */
+    right: 0;
+    width: 100%;
+    flex-direction: column;
+    background: rgba(13, 13, 13, 0.95); /* Slightly transparent background */
+    backdrop-filter: blur(10px);
+    padding: 1rem;
+    border-radius: 0 0 10px 10px;
+    border-top: 1px solid var(--primary);
+  }
+
+  /* When menu is opened via JS */
+  .nav-links.active {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
+  }
+
+  /* Forcing order of elements: logo, carrito, menú toggle */
+  .logo { order: 1; }
+  .cart-panel-header { order: 2; }
+  .menu-toggle { order: 3; }
+}
+
+/* For Desktops */
+@media (min-width: 769px) {
+  .header-flex {
+    justify-content: flex-start; /* Align items to the start */
+    gap: 2rem; /* Add space between nav and cart */
   }
 
   .logo {
-    height: 48px;
-  }
-
-  .menu-toggle {
-    margin-left: auto;
+    margin-right: auto; /* Pushes everything else to the right */
   }
 }
 
-/* Estilo general: no cortes palabras, no uses guiones */
-body, .glass, .glass-inner {
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-  hyphens: none;
-}
-
-/* Tamaño normal para escritorio */
-.glass-inner h1,
-.glass-inner h2,
-.glass-inner p {
-  font-size: 1.5rem; /* o el tamaño que estabas usando antes */
-}
-
-/* SOLO en pantallas pequeñas: reducir ligeramente */
+/* SOLO en pantallas pequeñas: reducir ligeramente texto en cards */
 @media (max-width: 600px) {
-  .glass-inner h1 {
-    font-size: 1.25rem;
-  }
-
-  .glass-inner h2 {
-    font-size: 1.1rem;
-  }
-
-  .glass-inner p {
-    font-size: 0.95rem;
-  }
+    .glass-inner h1 { font-size: 1.25rem; }
+    .glass-inner h2 { font-size: 1.1rem; }
+    .glass-inner p { font-size: 0.95rem; }
 }
-
-/* Habilitar menú también con clase .show (como en index.html) */
-@media (max-width: 768px) {
-  .nav-links.show {
-    display: flex;
-  }
-}
-
-/* ----------------------------------------------------------*/
-.header-flex {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  position: relative;
-}
-
-.cart-panel-header {
-  flex: 0 0 auto;
-  text-align: center;
-}
-
-.cart-panel-header button {
-  background: none;
-  border: none;
-  font-size: 1.8rem;
-  cursor: pointer;
-}
-
-/* Estilo para el ícono de carrito */
-.cart-panel-header {
-  position: relative;
-  order: 3;
-}
-
-#cartToggle {
-  background: none;
-  border: none;
-  font-size: 1.8rem;
-  cursor: pointer;
-  position: relative;
-}
-
-#cart-count {
-  position: absolute;
-  top: -8px;
-  right: -10px;
-  background: red;
-  color: white;
-  border-radius: 50%;
-  padding: 2px 6px;
-  font-size: 0.7rem;
-  font-weight: bold;
-}
-
-/* Posicionamiento en pantallas grandes */
-@media (min-width: 768px) {
-  .header-flex {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  .cart-panel-header {
-    margin-left: auto;
-  }
-
-  .menu-toggle {
-    display: none;
-  }
-}
-
-/* Posicionamiento en pantallas pequeñas */
-@media (max-width: 767px) {
-  .header-flex {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  .cart-panel-header {
-    order: 2;
-    margin: 0 auto;
-  }
-
-  .menu-toggle {
-    order: 3;
-  }
-
-  .logo {
-    order: 1;
-  }
-}
-
-

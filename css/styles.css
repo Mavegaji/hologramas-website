@@ -63,7 +63,7 @@ body {
 
 /* Menú de navegación principal */
 .main-nav {
-  margin-top: 1rem; /* Espacio entre la fila superior y la navegación */
+  margin-top: 1rem;
   padding-bottom: 0.5rem;
   border-bottom: 1px solid var(--border-glow);
 }
@@ -97,14 +97,14 @@ body {
 }
 
 .menu-toggle {
-  display: none; /* Oculto en desktop */
+  display: none;
   font-size: 1.8rem;
   background: none;
   border: none;
   color: var(--primary);
   cursor: pointer;
   z-index: 1001;
-  position: relative; /* <-- AJUSTE FINAL Y CRUCIAL */
+  position: relative;
 }
 
 /* --- ESTILOS DE CARRITO --- */
@@ -221,9 +221,7 @@ footer a { color: var(--primary); text-decoration: none; }
   .cart-panel-header { justify-self: center; }
   .menu-toggle { justify-self: end; }
 
-  .main-nav {
-      display: none;
-  }
+  /* -- SE ELIMINÓ LA REGLA CONFLICTIVA DE AQUÍ -- */
   
   .menu-toggle {
       display: block;
@@ -242,7 +240,7 @@ footer a { color: var(--primary); text-decoration: none; }
       border-radius: 10px;
       border: 1px solid var(--border-glow);
       display: none;
-      z-index: 1000; /* Aseguramos que esté por encima del contenido */
+      z-index: 1000;
   }
   
   .nav-links.active {
@@ -254,6 +252,13 @@ footer a { color: var(--primary); text-decoration: none; }
   }
 
   .hero h1 { font-size: 2.5rem; }
+  
+  /* En móvil, la barra de navegación de abajo no es necesaria, pero no la escondemos
+     para no esconder a su hijo (la lista de enlaces) */
+  .main-nav {
+      border-bottom: none;
+      margin-top: 0;
+  }
 }
 
 @media (max-width: 600px) {

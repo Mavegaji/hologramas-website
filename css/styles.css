@@ -447,6 +447,26 @@ body, .glass, .glass-inner {
   }
 }
 
+/* ----------------------------------------------------------*/
+.header-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.cart-panel-header {
+  flex: 0 0 auto;
+  text-align: center;
+}
+
+.cart-panel-header button {
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
 
 
 

@@ -176,7 +176,9 @@ body {
     font-weight: bold;
     transition: 0.3s ease;
     cursor: pointer;
-    white-space: nowrap; /* <-- ESTA ES LA LÍNEA MÁGICA */
+    white-space: nowrap; 
+    text-decoration: none; /* Asegura que no haya subrayado si se usa en un <a> */
+    display: inline-block; /* Buen comportamiento por defecto */
 }
 
 .btn-primary:hover { background-color: var(--primary); color: var(--bg); box-shadow: 0 0 12px var(--primary); }
@@ -364,7 +366,7 @@ footer a { color: var(--primary); text-decoration: none; }
       z-index: 1000;
   }
   
-  .nav-links.active {
+  .nav-links.show { /* Corregido para coincidir con tu JS */
       display: flex;
   }
   
@@ -378,6 +380,25 @@ footer a { color: var(--primary); text-decoration: none; }
   }
 
   .hero h1 { font-size: 2.5rem; }
+
+  /* =============================================================== */
+  /* == INICIO: CÓDIGO AÑADIDO PARA CORREGIR BOTONES EN SECCIÓN HERO == */
+  /* =============================================================== */
+  .hero a.btn-primary {
+    display: block;          /* Fuerza a cada botón a ocupar una línea para apilarse */
+    margin-left: auto;       /* Centra el botón horizontalmente */
+    margin-right: auto;      /* Centra el botón horizontalmente */
+    margin-bottom: 1rem;     /* Añade un espacio de 16px (típicamente) debajo */
+    max-width: 280px;        /* Evita que los botones sean demasiado anchos en la pantalla */
+  }
+
+  .hero a.btn-primary:last-child {
+    margin-bottom: 0;        /* Elimina el margen inferior del último botón */
+  }
+  /* =============================================================== */
+  /* == FIN: CÓDIGO AÑADIDO                                        == */
+  /* =============================================================== */
+
 }
 
 @media (max-width: 600px) {

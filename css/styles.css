@@ -332,6 +332,66 @@ footer a { color: var(--primary); text-decoration: none; }
 .holo-ring:nth-child(3) { animation-delay: 2s; }
 @keyframes pulseRing { 0% { transform: scale(0.6); opacity: 0.9; } 100% { transform: scale(2.5); opacity: 0; } }
 
+
+/* --- ESTILOS PARA LA PÁGINA DE PROYECTOS/VIDEOS --- */
+
+.page-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.page-header h1 {
+  font-size: 3rem;
+  font-family: var(--font-future);
+  text-shadow: 0 0 15px var(--primary);
+  margin-bottom: 0.5rem;
+}
+
+.page-header p {
+  font-size: 1.1rem;
+  color: #cccccc;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.video-gallery {
+  display: grid;
+  /* Elige una de estas dos opciones para las columnas: */
+  
+  /* Opción 1: Dos columnas en escritorio, una en móvil */
+  grid-template-columns: repeat(2, 1fr); 
+
+  /* Opción 2: Columnas que se ajustan automáticamente */
+  /* grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); */
+  
+  gap: 2rem;
+}
+
+.video-card {
+  padding: 1.5rem;
+  transition: 0.3s;
+}
+
+.video-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px var(--primary);
+}
+
+.video-card h2 {
+  font-family: var(--font-future);
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--primary);
+}
+
+.video-card video {
+  width: 100%;
+  display: block;
+  border-radius: 8px; /* Para que las esquinas del video sean redondeadas */
+  border: 1px solid var(--border-glow);
+}
+
+
 /* --- RESPONSIVE (Móvil) --- */
 
 @media (max-width: 768px) {
@@ -398,6 +458,11 @@ footer a { color: var(--primary); text-decoration: none; }
   /* =============================================================== */
   /* == FIN: CÓDIGO AÑADIDO                                        == */
   /* =============================================================== */
+  .page-header h1 { font-size: 2.2rem; }
+  
+  .video-gallery {
+    grid-template-columns: 1fr; /* Una sola columna en móviles */
+  }
 
 }
 

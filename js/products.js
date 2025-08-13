@@ -5,7 +5,7 @@ const productos = [
     { id: 2, nombre: "V42", stock: 6, diametro: 43, precio: 143, imagen: "v42.png" },
     { id: 3, nombre: "P65", stock: 15, diametro: 65, precio: 704, imagen: "p65.png" },
     { id: 4, nombre: "P80", stock: 10, diametro: 80, precio: 759, imagen: "p80.png" },
-    { id: 5, nombre: "A80", stock: 8, diametro: 77, precio: 1628, imagen: "a80.png" }
+    { id: 5, nombre: "A80 - Exterior", stock: 8, diametro: 77, precio: 1628, imagen: "a80.png" }
 ];
 
 // Su única responsabilidad es renderizar la lista de productos en el DOM.

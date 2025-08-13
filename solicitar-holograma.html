@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Proyectos de Hologramas | Hologramas CR</title> <link rel="stylesheet" href="css/styles.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&family=Outfit&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+<div class="holo-rings">
+    <div class="holo-ring"></div>
+    <div class="holo-ring"></div>
+    <div class="holo-ring"></div>
+</div>
+
+<div id="particles-js"></div>
+
+<header class="main-header glass">
+    <div class="container">
+        <div class="header-top">
+            <a href="index.html" class="logo-link"> <img src="images/logo.png" alt="Logo Hologramas CR" class="logo" />
+            </a>
+            <div class="cart-panel-header">
+                <a href="cart.html" class="cart-button" aria-label="Ver carrito">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span id="cart-count" class="cart-count">0</span>
+                </a>
+            </div>
+            <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+                 <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <nav class="main-nav">
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="about.html">Acerca de Nosotros</a></li>
+                <li><a href="products.html">Productos</a></li>
+                <li><a href="services.html" aria-current="page">Servicios</a></li> 
+                <li><a href="contact.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main class="content">
+    <div class="container">
+        
+        <div class="page-header">
+            <h1>Hologramas en Acción</h1>
+            <p>Explora algunos de nuestros proyectos y visualiza el potencial para tu marca.</p>
+        </div>
+
+        <div class="video-gallery">
+            
+            <div class="video-card glass">
+                <h2>Lanzamiento de Producto</h2>
+                <video controls poster="images/poster1.jpg">
+                    <source src="videos/lanzamiento-producto.mp4" type="video/mp4">
+                    Tu navegador no soporta la etiqueta de video.
+                </video>
+            </div>
+
+            <div class="video-card glass">
+                <h2>Exhibición en Museo</h2>
+                 <video controls poster="images/poster2.jpg">
+                    <source src="videos/exhibicion-museo.mp4" type="video/mp4">
+                    Tu navegador no soporta la etiqueta de video.
+                </video>
+            </div>
+
+            <div class="video-card glass">
+                <h2>Activación para Concierto</h2>
+                 <video controls poster="images/poster3.jpg">
+                    <source src="videos/activacion-concierto.mp4" type="video/mp4">
+                    Tu navegador no soporta la etiqueta de video.
+                </video>
+            </div>
+
+             <div class="video-card glass">
+                <h2>Asistente Virtual Corporativo</h2>
+                 <video controls poster="images/poster4.jpg">
+                    <source src="videos/asistente-virtual.mp4" type="video/mp4">
+                    Tu navegador no soporta la etiqueta de video.
+                </video>
+            </div>
+
+        </div>
+    </div>
+</main>
+
+
+<section class="cta">
+    <div class="container">
+        <h2>¿Listo para crear tu propio holograma?</h2>
+        <p>Nuestro equipo de expertos está preparado para convertir tu visión en una realidad tridimensional.</p>
+        <a href="contact.html" class="btn-primary">Contacto</a>
+    </div>
+</section>
+
+
+<footer class="glass">
+  <div class="container">
+    <p>&copy; 2025 Hologramas CR. Todos los derechos reservados.</p>
+    <p>San José, Costa Rica</p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+<script src="js/script.js"></script>
+<script>
+  const toggleBtn = document.getElementById("menuToggle");
+  const navLinks = document.getElementById("navLinks");
+  toggleBtn.addEventListener("click", () => {
+    navLinks.classList.toggle("show");
+  });
+</script>
+<script src="js/products.js"></script>
+<script src="js/cart.js"></script>
+
+</body>
+</html>

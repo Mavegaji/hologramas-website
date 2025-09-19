@@ -75,5 +75,13 @@
 <script src="js/products.js"></script>
 <script src="js/cart.js"></script>
 
+<script>
+  const toggleBtn = document.getElementById("menuToggle");
+  const navLinks = document.getElementById("navLinks");
+  toggleBtn.addEventListener("click", () => {
+    navLinks.classList.toggle("show");
+  });
+</script>
+    
 </body>
 </html>

@@ -470,9 +470,46 @@ footer a { color: var(--primary); text-decoration: none; }
   .hero h1 { font-size: 2rem; }
   .hero p { font-size: 1rem; }
 }
-/* Arreglo rápido para tablas en móvil */
-.cart-table td {
-  word-wrap: break-word; /* Para navegadores antiguos */
-  overflow-wrap: break-word; /* Estándar actual */
-  white-space: normal !important; /* Asegura que el texto pueda saltar de línea */
+
+/* --- Estilos para hacer la tabla del carrito responsiva --- */
+
+/* Usamos un media query para aplicar estos estilos solo en pantallas
+   de 768px de ancho o menos (tablets y celulares) */
+@media screen and (max-width: 768px) {
+  .cart-table {
+    border: 0;
+  }
+
+  .cart-table thead {
+    /* Ocultamos los encabezados de la tabla, ya no los necesitamos */
+    display: none;
+  }
+
+  .cart-table tr {
+    /* Hacemos que cada fila se comporte como un bloque separado (una tarjeta) */
+    display: block;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #ddd;
+  }
+
+  .cart-table td {
+    /* Hacemos que cada celda ocupe todo el ancho y se apile verticalmente */
+    display: block;
+    text-align: right; /* Alineamos el contenido a la derecha */
+    font-size: 16px;
+    border-bottom: 1px dotted #ccc;
+  }
+
+  .cart-table td:last-child {
+    border-bottom: 0;
+  }
+
+  /* Usamos un pseudo-elemento ::before para agregar el título de la columna
+     como una etiqueta a la izquierda de cada celda */
+  .cart-table td::before {
+    content: attr(data-label); /* Obtenemos el texto del atributo 'data-label' */
+    float: left; /* Lo alineamos a la izquierda */
+    font-weight: bold;
+    text-transform: uppercase;
+  }
 }

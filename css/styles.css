@@ -470,3 +470,9 @@ footer a { color: var(--primary); text-decoration: none; }
   .hero h1 { font-size: 2rem; }
   .hero p { font-size: 1rem; }
 }
+/* Arreglo rápido para tablas en móvil */
+.cart-table td {
+  word-wrap: break-word; /* Para navegadores antiguos */
+  overflow-wrap: break-word; /* Estándar actual */
+  white-space: normal !important; /* Asegura que el texto pueda saltar de línea */
+}

@@ -55,15 +55,15 @@ function renderizarPaginaCarrito() {
         const tr = document.createElement('tr');
         tr.className = 'cart-item';
         tr.innerHTML = `
-            <td>${item.nombre}</td>
-            <td>$${item.precio.toFixed(2)}</td>
-            <td class="quantity-controls">
+            <td data-label="Producto">${item.nombre}</td>
+            <td data-label="Precio">$${item.precio.toFixed(2)}</td>
+            <td data-label="Cantidad" class="quantity-controls">
                 <button class="btn-quantity" data-id="${item.id}" data-action="decrease">-</button>
                 <span>${item.cantidad}</span>
                 <button class="btn-quantity" data-id="${item.id}" data-action="increase">+</button>
             </td>
-            <td>$${itemSubtotal.toFixed(2)}</td>
-            <td>
+            <td data-label="Subtotal">$${itemSubtotal.toFixed(2)}</td>
+            <td data-label="">
                 <button class="btn-remove" data-id="${item.id}">&times;</button>
             </td>
         `;

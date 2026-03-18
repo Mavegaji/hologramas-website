@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Productos | Hologramas CR</title>
+    <title>Servicios | Hologramas CR</title>
+    <meta name="description" content="Servicios profesionales de Hologramas CR — Mantenimiento, diseño personalizado, consultoría técnica y capacitación en tecnología holográfica." />
+    <link rel="icon" href="images/logo.png" type="image/png" />
     <link rel="stylesheet" href="css/styles.css" />
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&family=Outfit&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-GMX8XPWR30"></script>
@@ -15,7 +16,6 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'G-GMX8XPWR30');
     </script>
 </head>
@@ -30,9 +30,8 @@
 
 <header class="main-header glass">
     <div class="container">
-        
         <div class="header-top">
-            <a href="https://hologramas.cr" class="logo-link">
+            <a href="index.html" class="logo-link">
                 <img src="images/logo.png" alt="Logo Hologramas CR" class="logo" />
             </a>
             <div class="cart-panel-header">
@@ -50,12 +49,11 @@
             <ul class="nav-links" id="navLinks">
                 <li><a href="index.html">Inicio</a></li>
                 <li><a href="about.html">Acerca de Nosotros</a></li>
-                <li><a href="products.html" aria-current="page">Productos</a></li>
-                <li><a href="services.html">Servicios</a></li>
+                <li><a href="products.html">Productos</a></li>
+                <li><a href="services.html" aria-current="page">Servicios</a></li>
                 <li><a href="contact.html">Contacto</a></li>
             </ul>
         </nav>
-
     </div>
 </header>
 
@@ -67,6 +65,7 @@
 
   <section class="services-list">
     <article class="service-card glass-inner">
+      <i class="fa-solid fa-wrench service-icon"></i>
       <h2>Mantenimiento Preventivo y Correctivo</h2>
       <p>
         Aseguramos la operatividad y prolongamos la vida útil de sus equipos holográficos con planes adaptados a sus necesidades.
@@ -74,6 +73,7 @@
     </article>
 
     <article class="service-card glass-inner">
+      <i class="fa-solid fa-wand-magic-sparkles service-icon"></i>
       <h2>Diseño y Desarrollo Personalizado</h2>
       <p>
         Creamos soluciones a la medida, integrando tecnología holográfica con sistemas específicos de su industria para maximizar el impacto.
@@ -81,6 +81,7 @@
     </article>
 
     <article class="service-card glass-inner">
+      <i class="fa-solid fa-graduation-cap service-icon"></i>
       <h2>Consultoría Técnica y Capacitación</h2>
       <p>
         Brindamos asesoría experta y formación para su equipo, garantizando el uso eficiente y seguro de las tecnologías holográficas.
@@ -91,23 +92,14 @@
 
 <footer class="glass">
   <div class="container">
-    <p>&copy; 2025 Hologramas CR. Todos los derechos reservados.</p>
+    <p>&copy; 2026 Hologramas CR. Todos los derechos reservados.</p>
     <p>San José, Costa Rica</p>
   </div>
 </footer>
 
-<!-- Scripts -->
-<script src="js/particles.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 <script src="js/script.js"></script>
+<script src="js/products.js"></script>
 <script src="js/cart.js"></script>
-
-<script>
-  const toggleBtn = document.getElementById("menuToggle");
-  const navLinks = document.getElementById("navLinks");
-  toggleBtn.addEventListener("click", () => {
-    navLinks.classList.toggle("show");
-  });
-</script>
-    
 </body>
 </html>

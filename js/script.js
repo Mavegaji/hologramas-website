@@ -53,9 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (menuToggle && navLinks) {
         menuToggle.addEventListener('click', () => {
-            // Esta línea añade o quita la clase 'active' a la lista de enlaces.
-            // El CSS se encargará de mostrar u ocultar el menú basado en esta clase.
-            navLinks.classList.toggle('active');
+            navLinks.classList.toggle('show');
         });
     }
 

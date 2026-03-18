@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Productos | Hologramas CR</title>
+    <title>Contacto | Hologramas CR</title>
+    <meta name="description" content="Contáctenos — Hologramas CR. Envíenos su consulta y nuestro equipo le responderá a la brevedad." />
+    <link rel="icon" href="images/logo.png" type="image/png" />
     <link rel="stylesheet" href="css/styles.css" />
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&family=Outfit&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
@@ -14,10 +16,11 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'G-GMX8XPWR30');
     </script>
 
+    <!-- reCAPTCHA API -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body>
 <div class="holo-rings">
@@ -30,9 +33,8 @@
 
 <header class="main-header glass">
     <div class="container">
-        
         <div class="header-top">
-            <a href="https://hologramas.cr" class="logo-link">
+            <a href="index.html" class="logo-link">
                 <img src="images/logo.png" alt="Logo Hologramas CR" class="logo" />
             </a>
             <div class="cart-panel-header">
@@ -50,71 +52,73 @@
             <ul class="nav-links" id="navLinks">
                 <li><a href="index.html">Inicio</a></li>
                 <li><a href="about.html">Acerca de Nosotros</a></li>
-                <li><a href="products.html" aria-current="page">Productos</a></li>
+                <li><a href="products.html">Productos</a></li>
                 <li><a href="services.html">Servicios</a></li>
-                <li><a href="contact.html">Contacto</a></li>
+                <li><a href="contact.html" aria-current="page">Contacto</a></li>
             </ul>
         </nav>
-
     </div>
 </header>
 
-<section class="contact-form glass-inner">
-  <form id="form-contacto" action="https://formspree.io/f/xyzwvjnk" method="POST" class="form-grid">
+<main class="container glass content">
+  <section class="hero glass-inner">
+    <h1>Contáctenos</h1>
+    <p>¿Tiene alguna consulta o le interesa una demostración? Escríbanos y le responderemos a la brevedad.</p>
+  </section>
 
-    <div class="form-group">
-      <label for="nombre">Nombre completo *</label>
-      <input type="text" name="nombre" id="nombre" required>
-    </div>
+  <section class="contact-form">
+    <form id="form-contacto" action="https://formspree.io/f/xyzwvjnk" method="POST" class="form-grid">
 
-    <div class="form-group">
-      <label for="empresa">Empresa</label>
-      <input type="text" name="empresa" id="empresa">
-    </div>
+      <div class="form-group">
+        <label for="nombre">Nombre completo *</label>
+        <input type="text" name="nombre" id="nombre" required>
+      </div>
 
-    <div class="form-group">
-      <label for="telefono">Número de teléfono</label>
-      <input type="tel" name="telefono" id="telefono">
-    </div>
+      <div class="form-group">
+        <label for="empresa">Empresa</label>
+        <input type="text" name="empresa" id="empresa">
+      </div>
 
-    <div class="form-group">
-      <label for="email">Correo electrónico *</label>
-      <input type="email" name="email" id="email" required>
-    </div>
+      <div class="form-group">
+        <label for="telefono">Número de teléfono</label>
+        <input type="tel" name="telefono" id="telefono">
+      </div>
 
-    <div class="form-group full">
-      <label for="mensaje">Mensaje *</label>
-      <textarea name="mensaje" id="mensaje" rows="5" required></textarea>
-    </div>
+      <div class="form-group">
+        <label for="email">Correo electrónico *</label>
+        <input type="email" name="email" id="email" required>
+      </div>
 
-    <!-- 🔹 Widget de reCAPTCHA -->
-    <div class="form-group full">
-      <div class="g-recaptcha" data-sitekey="6Ld1-UErAAAAABnvnA8XuOOdajxlxAAXq_5pmV2F"></div>
-    </div>
+      <div class="form-group full">
+        <label for="mensaje">Mensaje *</label>
+        <textarea name="mensaje" id="mensaje" rows="5" required></textarea>
+      </div>
 
-    <div class="form-group full">
-      <button type="submit" class="btn-primary">Enviar</button>
-    </div>
+      <div class="form-group full">
+        <div class="g-recaptcha" data-sitekey="6Ld1-UErAAAAABnvnA8XuOOdajxlxAAXq_5pmV2F"></div>
+      </div>
 
-    <p id="respuesta-formulario" style="margin-top: 1rem; color: var(--primary);"></p>
-  </form>
-</section>
+      <div class="form-group full">
+        <button type="submit" class="btn-primary">Enviar mensaje</button>
+      </div>
+
+      <p id="respuesta-formulario" style="margin-top: 1rem; color: var(--primary);"></p>
+    </form>
+  </section>
+</main>
 
 <footer class="glass">
   <div class="container">
-    <p>&copy; 2025 Hologramas CR. Todos los derechos reservados.</p>
+    <p>&copy; 2026 Hologramas CR. Todos los derechos reservados.</p>
     <p>San José, Costa Rica</p>
   </div>
 </footer>
 
-<!-- Scripts -->
 <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-<script src="js/particles.min.js"></script>
 <script src="js/script.js"></script>
 <script src="js/products.js"></script>
 <script src="js/cart.js"></script>
 
-<!-- reCAPTCHA + Formulario -->
 <script>
   document.getElementById("form-contacto").addEventListener("submit", async function(e) {
     e.preventDefault();
@@ -123,9 +127,9 @@
     const data = new FormData(form);
     const respuesta = document.getElementById("respuesta-formulario");
 
-    const token = grecaptcha.getResponse();
+    const token = typeof grecaptcha !== 'undefined' ? grecaptcha.getResponse() : null;
     if (!token) {
-      respuesta.textContent = "⚠️ Por favor, verifique que no es un robot.";
+      respuesta.textContent = "Por favor, verifique que no es un robot.";
       return;
     }
 
@@ -133,36 +137,20 @@
       const res = await fetch(form.action, {
         method: "POST",
         body: data,
-        headers: {
-          'Accept': 'application/json'
-        }
+        headers: { 'Accept': 'application/json' }
       });
 
       if (res.ok) {
-        respuesta.textContent = "✅ ¡Mensaje enviado con éxito!";
+        respuesta.textContent = "Mensaje enviado con éxito. ¡Gracias por contactarnos!";
         form.reset();
         grecaptcha.reset();
       } else {
-        respuesta.textContent = "❌ Hubo un problema al enviar el mensaje.";
+        respuesta.textContent = "Hubo un problema al enviar el mensaje. Intente de nuevo.";
       }
     } catch (error) {
-      respuesta.textContent = "⚠️ Error de conexión.";
+      respuesta.textContent = "Error de conexión. Por favor, intente más tarde.";
     }
   });
 </script>
-
-<!-- Menú hamburguesa -->
-<script>
-  const toggleBtn = document.getElementById("menuToggle");
-  const navLinks = document.getElementById("navLinks");
-
-  toggleBtn.addEventListener("click", () => {
-    navLinks.classList.toggle("show");
-  });
-</script>
-
-<!-- PayPal SDK -->
-<script src="https://www.paypal.com/sdk/js?client-id=sb&currency=USD"></script>
-
 </body>
 </html>

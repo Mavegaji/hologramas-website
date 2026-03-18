@@ -165,6 +165,7 @@ body {
 
 /* --- GENERIC & UTILITY CLASSES --- */
 .glass { background: var(--glass); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border: 1px solid var(--border-glow); border-radius: 20px; box-shadow: 0 0 20px var(--border-glow); transition: all 0.3s ease-in-out; }
+.glass-inner { background: rgba(255,255,255,0.05); border: 1px solid rgba(0, 240, 255, 0.2); border-radius: 12px; padding: 1.5rem; transition: all 0.3s ease; }
 
 .btn-primary {
     background: transparent;
@@ -194,8 +195,20 @@ body {
 .product-card:hover, .service-card:hover { transform: translateY(-5px); box-shadow: 0 0 20px var(--primary); }
 .product-card h2, .service-card h2 { font-family: var(--font-future); font-size: 1.5rem; margin-bottom: 1rem; color: var(--primary); }
 .product-card p, .service-card p { color: #ccc; }
-.product-card img { width: 100%; display: block; border-bottom: 1px solid var(--border-glow); }
+.product-card img { width: 100%; display: block; border-bottom: 1px solid var(--border-glow); border-radius: 8px 8px 0 0; }
+.product-info { padding: 0.75rem 0; }
+.product-desc { color: #bbb; font-size: 0.9rem; margin-bottom: 0.75rem; line-height: 1.5; }
+.product-specs { list-style: none; padding: 0; margin: 0 0 1rem 0; display: flex; flex-direction: column; gap: 0.4rem; }
+.product-specs li { font-size: 0.9rem; color: #ccc; display: flex; align-items: center; gap: 0.5rem; }
+.product-specs li i { color: var(--primary); font-size: 0.85rem; width: 14px; }
+.product-card .btn-primary { width: 100%; text-align: center; margin-top: 0.5rem; }
 
+.service-card .service-icon { font-size: 2.5rem; color: var(--primary); margin-bottom: 1rem; display: block; text-shadow: 0 0 10px var(--primary); }
+.about-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+.about-card { text-align: center; padding: 2rem 1.5rem; }
+.about-card .about-icon { font-size: 2.5rem; color: var(--primary); margin-bottom: 1rem; display: block; text-shadow: 0 0 10px var(--primary); }
+.about-card h2 { font-family: var(--font-future); font-size: 1.3rem; color: var(--primary); margin-bottom: 0.75rem; }
+.about-card p { color: #ccc; font-size: 0.95rem; line-height: 1.6; }
 .cta { text-align: center; padding: 4rem 2rem; margin-top: 5rem; border: 2px dashed var(--primary); border-radius: 20px; background: rgba(0, 240, 255, 0.05); }
 .cta h2 { font-size: 2.2rem; font-family: var(--font-future); color: var(--primary); text-shadow: 0 0 10px var(--primary); margin-bottom: 1rem; }
 .cta p { color: #ddd; font-size: 1.1rem; margin-bottom: 2rem; }

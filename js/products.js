@@ -1,11 +1,51 @@
 // js/products.js
 
 const productos = [
-    { id: 1, nombre: "V20", stock: 7, diametro: 18, precio: 108, imagen: "v20.png" },
-    { id: 2, nombre: "V42", stock: 6, diametro: 43, precio: 143, imagen: "v42.png" },
-    { id: 3, nombre: "P65", stock: 15, diametro: 65, precio: 704, imagen: "p65.png" },
-    { id: 4, nombre: "P80", stock: 10, diametro: 80, precio: 759, imagen: "p80.png" },
-    { id: 5, nombre: "A80 - Exterior", stock: 8, diametro: 77, precio: 1628, imagen: "a80.png" }
+    {
+        id: 1,
+        nombre: "V20",
+        stock: 7,
+        diametro: 18,
+        precio: 108,
+        imagen: "V20.png",
+        descripcion: "Display holográfico compacto ideal para escaparates, puntos de venta y presentaciones de escritorio."
+    },
+    {
+        id: 2,
+        nombre: "V42",
+        stock: 6,
+        diametro: 43,
+        precio: 143,
+        imagen: "V42.png",
+        descripcion: "Display holográfico de tamaño mediano, perfecto para kioscos interactivos y exhibiciones comerciales."
+    },
+    {
+        id: 3,
+        nombre: "P65",
+        stock: 15,
+        diametro: 65,
+        precio: 704,
+        imagen: "P65.png",
+        descripcion: "Sistema profesional de alto impacto para presentaciones corporativas, ferias y eventos empresariales."
+    },
+    {
+        id: 4,
+        nombre: "P80",
+        stock: 10,
+        diametro: 80,
+        precio: 759,
+        imagen: "P80.png",
+        descripcion: "Sistema profesional de gran formato ideal para audiencias amplias, lobbies y salones de exposición."
+    },
+    {
+        id: 5,
+        nombre: "A80 - Exterior",
+        stock: 8,
+        diametro: 77,
+        precio: 1628,
+        imagen: "A80.png",
+        descripcion: "Sistema robusto para uso exterior, resistente a condiciones ambientales adversas. Ideal para espacios públicos y fachadas."
+    }
 ];
 
 // Su única responsabilidad es renderizar la lista de productos en el DOM.
@@ -21,9 +61,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
         article.innerHTML = `
             <h2>${prod.nombre}</h2>
-            <img src="images/${prod.imagen}" alt="${prod.nombre} Equipo Holográfico" />
-            <p>${prod.stock} unidades disponibles, ${prod.diametro} cm de diámetro. Precio: $${prod.precio}</p>
-            <button class="btn-primary agregar-carrito" data-id="${prod.id}">Agregar al carrito</button>
+            <img src="images/${prod.imagen}" alt="${prod.nombre} Equipo Holográfico" loading="lazy" />
+            <div class="product-info">
+                <p class="product-desc">${prod.descripcion}</p>
+                <ul class="product-specs">
+                    <li><i class="fa-solid fa-circle-dot"></i> Diámetro: <strong>${prod.diametro} cm</strong></li>
+                    <li><i class="fa-solid fa-boxes-stacked"></i> Stock: <strong>${prod.stock} unidades</strong></li>
+                    <li><i class="fa-solid fa-tag"></i> Precio: <strong>$${prod.precio.toFixed(2)}</strong></li>
+                </ul>
+            </div>
+            <button class="btn-primary agregar-carrito" data-id="${prod.id}">
+                <i class="fa-solid fa-cart-plus"></i> Agregar al carrito
+            </button>
         `;
 
         productList.appendChild(article);

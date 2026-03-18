@@ -4,8 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Carrito de Compras | Hologramas CR</title>
+    <meta name="description" content="Carrito de compras — Hologramas CR. Revise su pedido y realice su pago de forma segura." />
+    <link rel="icon" href="images/logo.png" type="image/png" />
     <link rel="stylesheet" href="css/styles.css" />
-    <link rel="icon" href="images/logo.png" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&family=Outfit&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
@@ -15,7 +16,6 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'G-GMX8XPWR30');
     </script>
 </head>
@@ -55,7 +55,7 @@
         </nav>
     </div>
 </header>
-  
+
 <main class="container glass content">
     <div class="cart-container">
         <h1>Tu Carrito de Compras</h1>
@@ -76,8 +76,7 @@
                         <th></th>
                     </tr>
                 </thead>
-                <tbody id="cart-items-table">
-                    </tbody>
+                <tbody id="cart-items-table"></tbody>
             </table>
 
             <div class="cart-summary">
@@ -105,24 +104,15 @@
 
 <footer class="glass">
     <div class="container">
-        <p>&copy; 2025 Hologramas CR. Todos los derechos reservados.</p>
+        <p>&copy; 2026 Hologramas CR. Todos los derechos reservados.</p>
         <p>San José, Costa Rica</p>
     </div>
 </footer>
 
-<script src="js/particles.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 <script src="js/script.js"></script>
 <script src="js/products.js"></script>
 <script src="https://www.paypal.com/sdk/js?client-id=sb&currency=USD"></script>
 <script src="js/cart.js"></script>
-
-<script>
-  const toggleBtn = document.getElementById("menuToggle");
-  const navLinks = document.getElementById("navLinks");
-  toggleBtn.addEventListener("click", () => {
-    navLinks.classList.toggle("show");
-  });
-</script>
-    
 </body>
 </html>

@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Productos | Hologramas CR</title>
+    <title>Acerca de Nosotros | Hologramas CR</title>
+    <meta name="description" content="Conoce a Hologramas CR — líderes en soluciones holográficas de alta tecnología en Costa Rica. Nuestra misión, visión y equipo." />
+    <link rel="icon" href="images/logo.png" type="image/png" />
     <link rel="stylesheet" href="css/styles.css" />
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&family=Outfit&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
@@ -14,7 +16,6 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'G-GMX8XPWR30');
     </script>
 </head>
@@ -29,9 +30,8 @@
 
 <header class="main-header glass">
     <div class="container">
-        
         <div class="header-top">
-            <a href="https://hologramas.cr" class="logo-link">
+            <a href="index.html" class="logo-link">
                 <img src="images/logo.png" alt="Logo Hologramas CR" class="logo" />
             </a>
             <div class="cart-panel-header">
@@ -48,13 +48,12 @@
         <nav class="main-nav">
             <ul class="nav-links" id="navLinks">
                 <li><a href="index.html">Inicio</a></li>
-                <li><a href="about.html">Acerca de Nosotros</a></li>
-                <li><a href="products.html" aria-current="page">Productos</a></li>
+                <li><a href="about.html" aria-current="page">Acerca de Nosotros</a></li>
+                <li><a href="products.html">Productos</a></li>
                 <li><a href="services.html">Servicios</a></li>
                 <li><a href="contact.html">Contacto</a></li>
             </ul>
         </nav>
-
     </div>
 </header>
 
@@ -67,48 +66,43 @@
     </p>
   </section>
 
-  <section class="features">
-    <div class="glass-inner">
+  <div class="about-grid">
+    <div class="about-card glass-inner">
+      <i class="fa-solid fa-bullseye about-icon"></i>
       <h2>Nuestra Misión</h2>
       <p>
         Proveer tecnología holográfica innovadora y servicios personalizados que impulsen la transformación digital y competitividad de nuestros clientes.
       </p>
+    </div>
 
+    <div class="about-card glass-inner">
+      <i class="fa-solid fa-eye about-icon"></i>
       <h2>Nuestra Visión</h2>
       <p>
         Ser la empresa referente en Latinoamérica en tecnología holográfica aplicada a la industria, comercio y educación.
       </p>
+    </div>
 
+    <div class="about-card glass-inner">
+      <i class="fa-solid fa-users about-icon"></i>
       <h2>El Equipo</h2>
       <p>
         Contamos con un equipo multidisciplinario de ingenieros, diseñadores y técnicos especializados en holografía, dedicados a crear soluciones a la medida.
       </p>
     </div>
-  </section>
+  </div>
 </main>
 
 <footer class="glass">
   <div class="container">
-    <p>&copy; 2025 Hologramas CR. Todos los derechos reservados.</p>
+    <p>&copy; 2026 Hologramas CR. Todos los derechos reservados.</p>
     <p>San José, Costa Rica</p>
   </div>
 </footer>
 
-<!-- Scripts -->
 <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-<script src="js/particles.min.js"></script>
 <script src="js/script.js"></script>
 <script src="js/products.js"></script>
 <script src="js/cart.js"></script>
-
-<!-- Menú hamburguesa -->
-<script>
-  const toggleBtn = document.getElementById("menuToggle");
-  const navLinks = document.getElementById("navLinks");
-
-  toggleBtn.addEventListener("click", () => {
-    navLinks.classList.toggle("show");
-  });
-</script>
 </body>
 </html>

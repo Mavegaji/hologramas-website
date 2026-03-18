@@ -3,9 +3,36 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contacto | Hologramas CR</title>
-    <meta name="description" content="Contáctenos — Hologramas CR. Envíenos su consulta y nuestro equipo le responderá a la brevedad." />
+    <title>Contacto — Hologramas CR | San José, Costa Rica</title>
+    <meta name="description" content="Contáctenos para cotizaciones, demostraciones y consultas sobre equipos holográficos en Costa Rica. Atención en San José y todo el país." />
+    <meta name="keywords" content="contacto hologramas Costa Rica, cotización display holográfico, demostración hologramas San José, solicitar información hologramas CR" />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Hologramas CR" />
+
+    <link rel="canonical" href="https://hologramas.cr/contact.html" />
     <link rel="icon" href="images/logo.png" type="image/png" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Hologramas CR" />
+    <meta property="og:title" content="Contacto | Hologramas CR — San José, Costa Rica" />
+    <meta property="og:description" content="Contáctenos para cotizaciones y demostraciones de equipos holográficos en Costa Rica." />
+    <meta property="og:url" content="https://hologramas.cr/contact.html" />
+    <meta property="og:image" content="https://hologramas.cr/images/logo2.png" />
+    <meta property="og:locale" content="es_CR" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Contacto | Hologramas CR" />
+    <meta name="twitter:description" content="Solicite cotizaciones y demostraciones de equipos holográficos en Costa Rica." />
+    <meta name="twitter:image" content="https://hologramas.cr/images/logo2.png" />
+
+    <!-- Performance hints -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
+
     <link rel="stylesheet" href="css/styles.css" />
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&family=Outfit&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
@@ -21,6 +48,50 @@
 
     <!-- reCAPTCHA API -->
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://hologramas.cr/" },
+            { "@type": "ListItem", "position": 2, "name": "Contacto", "item": "https://hologramas.cr/contact.html" }
+          ]
+        },
+        {
+          "@type": "ContactPage",
+          "url": "https://hologramas.cr/contact.html",
+          "name": "Contacto — Hologramas CR",
+          "description": "Formulario de contacto para cotizaciones y demostraciones de equipos holográficos en Costa Rica.",
+          "isPartOf": { "@id": "https://hologramas.cr/#website" }
+        },
+        {
+          "@type": "LocalBusiness",
+          "@id": "https://hologramas.cr/#localbusiness",
+          "name": "Hologramas CR",
+          "url": "https://hologramas.cr",
+          "logo": "https://hologramas.cr/images/logo.png",
+          "description": "Empresa líder en displays holográficos 5D en Costa Rica. Venta, instalación y mantenimiento.",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "San José",
+            "addressRegion": "San José",
+            "addressCountry": "CR"
+          },
+          "openingHours": "Mo-Fr 08:00-18:00",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "customer support",
+            "availableLanguage": "Spanish",
+            "areaServed": "CR"
+          }
+        }
+      ]
+    }
+    </script>
 </head>
 <body>
 <div class="holo-rings">
@@ -34,22 +105,22 @@
 <header class="main-header glass">
     <div class="container">
         <div class="header-top">
-            <a href="index.html" class="logo-link">
-                <img src="images/logo.png" alt="Logo Hologramas CR" class="logo" />
+            <a href="index.html" class="logo-link" aria-label="Hologramas CR — Inicio">
+                <img src="images/logo.png" alt="Hologramas CR" class="logo" width="180" height="48" />
             </a>
             <div class="cart-panel-header">
-                <a href="cart.html" class="cart-button" aria-label="Ver carrito">
-                    <i class="fa-solid fa-cart-shopping"></i>
+                <a href="cart.html" class="cart-button" aria-label="Ver carrito de compras">
+                    <i class="fa-solid fa-cart-shopping" aria-hidden="true"></i>
                     <span id="cart-count" class="cart-count">0</span>
                 </a>
             </div>
-            <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
-                 <i class="fa-solid fa-bars"></i>
+            <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="navLinks">
+                 <i class="fa-solid fa-bars" aria-hidden="true"></i>
             </button>
         </div>
 
-        <nav class="main-nav">
-            <ul class="nav-links" id="navLinks">
+        <nav class="main-nav" aria-label="Navegación principal">
+            <ul class="nav-links" id="navLinks" role="list">
                 <li><a href="index.html">Inicio</a></li>
                 <li><a href="about.html">Acerca de Nosotros</a></li>
                 <li><a href="products.html">Productos</a></li>
@@ -61,37 +132,44 @@
 </header>
 
 <main class="container glass content">
-  <section class="hero glass-inner">
+
+  <nav class="breadcrumbs" aria-label="Ruta de navegación">
+    <a href="index.html">Inicio</a>
+    <span aria-hidden="true">›</span>
+    <span aria-current="page">Contacto</span>
+  </nav>
+
+  <section class="hero glass-inner" aria-label="Encabezado de contacto">
     <h1>Contáctenos</h1>
-    <p>¿Tiene alguna consulta o le interesa una demostración? Escríbanos y le responderemos a la brevedad.</p>
+    <p>¿Tiene alguna consulta o le interesa una demostración de nuestros equipos holográficos en Costa Rica? Escríbanos y le responderemos a la brevedad.</p>
   </section>
 
-  <section class="contact-form">
-    <form id="form-contacto" action="https://formspree.io/f/xyzwvjnk" method="POST" class="form-grid">
+  <section class="contact-form" aria-label="Formulario de contacto">
+    <form id="form-contacto" action="https://formspree.io/f/xyzwvjnk" method="POST" class="form-grid" novalidate>
 
       <div class="form-group">
         <label for="nombre">Nombre completo *</label>
-        <input type="text" name="nombre" id="nombre" required>
+        <input type="text" name="nombre" id="nombre" autocomplete="name" required placeholder="Ej: Juan Pérez">
       </div>
 
       <div class="form-group">
         <label for="empresa">Empresa</label>
-        <input type="text" name="empresa" id="empresa">
+        <input type="text" name="empresa" id="empresa" autocomplete="organization" placeholder="Ej: Mi Empresa S.A.">
       </div>
 
       <div class="form-group">
         <label for="telefono">Número de teléfono</label>
-        <input type="tel" name="telefono" id="telefono">
+        <input type="tel" name="telefono" id="telefono" autocomplete="tel" placeholder="Ej: +506 8888-8888">
       </div>
 
       <div class="form-group">
         <label for="email">Correo electrónico *</label>
-        <input type="email" name="email" id="email" required>
+        <input type="email" name="email" id="email" autocomplete="email" required placeholder="Ej: correo@empresa.com">
       </div>
 
       <div class="form-group full">
         <label for="mensaje">Mensaje *</label>
-        <textarea name="mensaje" id="mensaje" rows="5" required></textarea>
+        <textarea name="mensaje" id="mensaje" rows="5" required placeholder="Cuéntenos sobre su proyecto o consulta..."></textarea>
       </div>
 
       <div class="form-group full">
@@ -99,18 +177,27 @@
       </div>
 
       <div class="form-group full">
-        <button type="submit" class="btn-primary">Enviar mensaje</button>
+        <button type="submit" class="btn-primary">
+          <i class="fa-solid fa-paper-plane" aria-hidden="true"></i> Enviar mensaje
+        </button>
       </div>
 
-      <p id="respuesta-formulario" style="margin-top: 1rem; color: var(--primary);"></p>
+      <p id="respuesta-formulario" role="status" aria-live="polite" style="margin-top:1rem;color:var(--primary);"></p>
     </form>
   </section>
+
 </main>
 
-<footer class="glass">
+<footer class="glass" role="contentinfo">
   <div class="container">
-    <p>&copy; 2026 Hologramas CR. Todos los derechos reservados.</p>
-    <p>San José, Costa Rica</p>
+    <p><strong>Hologramas CR</strong> — Displays holográficos 5D en Costa Rica</p>
+    <p>
+      <a href="products.html">Productos</a> &nbsp;|&nbsp;
+      <a href="services.html">Servicios</a> &nbsp;|&nbsp;
+      <a href="about.html">Acerca de</a> &nbsp;|&nbsp;
+      <a href="contact.html">Contacto</a>
+    </p>
+    <p>&copy; 2026 Hologramas CR. Todos los derechos reservados. San José, Costa Rica.</p>
   </div>
 </footer>
 

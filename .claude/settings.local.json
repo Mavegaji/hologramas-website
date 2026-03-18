@@ -1,7 +1,8 @@
 {
   "permissions": {
     "allow": [
-      "Bash(grep:*)"
+      "Bash(grep:*)",
+      "Bash(grep -h \"<title>\" /mnt/c/Users/admin/Documents/Github/hologramas-website/*.html)"
     ]
   }
 }

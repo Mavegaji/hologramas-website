@@ -3,9 +3,36 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Servicios | Hologramas CR</title>
-    <meta name="description" content="Servicios profesionales de Hologramas CR — Mantenimiento, diseño personalizado, consultoría técnica y capacitación en tecnología holográfica." />
+    <title>Servicios Holográficos — Mantenimiento, Diseño y Capacitación | Hologramas CR</title>
+    <meta name="description" content="Servicios profesionales de holografía en Costa Rica: mantenimiento preventivo y correctivo, diseño holográfico personalizado y consultoría técnica para empresas." />
+    <meta name="keywords" content="servicio hologramas Costa Rica, mantenimiento display holográfico, diseño holográfico personalizado, consultoría holográfica, capacitación holografía empresas" />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Hologramas CR" />
+
+    <link rel="canonical" href="https://hologramas.cr/services.html" />
     <link rel="icon" href="images/logo.png" type="image/png" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Hologramas CR" />
+    <meta property="og:title" content="Servicios Holográficos | Hologramas CR" />
+    <meta property="og:description" content="Mantenimiento, diseño personalizado y consultoría técnica en tecnología holográfica para empresas en Costa Rica." />
+    <meta property="og:url" content="https://hologramas.cr/services.html" />
+    <meta property="og:image" content="https://hologramas.cr/images/logo2.png" />
+    <meta property="og:locale" content="es_CR" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Servicios Holográficos | Hologramas CR" />
+    <meta name="twitter:description" content="Mantenimiento, diseño y consultoría en tecnología holográfica para empresas en Costa Rica." />
+    <meta name="twitter:image" content="https://hologramas.cr/images/logo2.png" />
+
+    <!-- Performance hints -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
+
     <link rel="stylesheet" href="css/styles.css" />
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&family=Outfit&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
@@ -17,6 +44,46 @@
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'G-GMX8XPWR30');
+    </script>
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://hologramas.cr/" },
+            { "@type": "ListItem", "position": 2, "name": "Servicios", "item": "https://hologramas.cr/services.html" }
+          ]
+        },
+        {
+          "@type": "Service",
+          "name": "Mantenimiento Preventivo y Correctivo de Equipos Holográficos",
+          "provider": { "@id": "https://hologramas.cr/#organization" },
+          "description": "Aseguramos la operatividad y prolongamos la vida útil de sus equipos holográficos con planes adaptados a sus necesidades.",
+          "areaServed": "CR",
+          "serviceType": "Mantenimiento de equipos holográficos"
+        },
+        {
+          "@type": "Service",
+          "name": "Diseño y Desarrollo Holográfico Personalizado",
+          "provider": { "@id": "https://hologramas.cr/#organization" },
+          "description": "Creamos soluciones holográficas a la medida integrando tecnología 5D con los sistemas específicos de su industria.",
+          "areaServed": "CR",
+          "serviceType": "Diseño holográfico personalizado"
+        },
+        {
+          "@type": "Service",
+          "name": "Consultoría Técnica y Capacitación en Holografía",
+          "provider": { "@id": "https://hologramas.cr/#organization" },
+          "description": "Asesoría experta y formación para su equipo, garantizando el uso eficiente de las tecnologías holográficas.",
+          "areaServed": "CR",
+          "serviceType": "Consultoría y capacitación holográfica"
+        }
+      ]
+    }
     </script>
 </head>
 <body>
@@ -31,22 +98,22 @@
 <header class="main-header glass">
     <div class="container">
         <div class="header-top">
-            <a href="index.html" class="logo-link">
-                <img src="images/logo.png" alt="Logo Hologramas CR" class="logo" />
+            <a href="index.html" class="logo-link" aria-label="Hologramas CR — Inicio">
+                <img src="images/logo.png" alt="Hologramas CR" class="logo" width="180" height="48" />
             </a>
             <div class="cart-panel-header">
-                <a href="cart.html" class="cart-button" aria-label="Ver carrito">
-                    <i class="fa-solid fa-cart-shopping"></i>
+                <a href="cart.html" class="cart-button" aria-label="Ver carrito de compras">
+                    <i class="fa-solid fa-cart-shopping" aria-hidden="true"></i>
                     <span id="cart-count" class="cart-count">0</span>
                 </a>
             </div>
-            <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
-                 <i class="fa-solid fa-bars"></i>
+            <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="navLinks">
+                 <i class="fa-solid fa-bars" aria-hidden="true"></i>
             </button>
         </div>
 
-        <nav class="main-nav">
-            <ul class="nav-links" id="navLinks">
+        <nav class="main-nav" aria-label="Navegación principal">
+            <ul class="nav-links" id="navLinks" role="list">
                 <li><a href="index.html">Inicio</a></li>
                 <li><a href="about.html">Acerca de Nosotros</a></li>
                 <li><a href="products.html">Productos</a></li>
@@ -58,42 +125,65 @@
 </header>
 
 <main class="container glass content">
-  <section class="hero glass-inner">
-    <h1>Servicios Profesionales</h1>
-    <p>Apoyamos a su empresa con soluciones completas y personalizadas en holografía.</p>
+
+  <nav class="breadcrumbs" aria-label="Ruta de navegación">
+    <a href="index.html">Inicio</a>
+    <span aria-hidden="true">›</span>
+    <span aria-current="page">Servicios</span>
+  </nav>
+
+  <section class="hero glass-inner" aria-label="Descripción de servicios">
+    <h1>Servicios Profesionales de Holografía</h1>
+    <p>Apoyamos a su empresa con soluciones completas y personalizadas en tecnología holográfica en Costa Rica: mantenimiento, diseño y capacitación.</p>
   </section>
 
-  <section class="services-list">
-    <article class="service-card glass-inner">
-      <i class="fa-solid fa-wrench service-icon"></i>
-      <h2>Mantenimiento Preventivo y Correctivo</h2>
-      <p>
-        Aseguramos la operatividad y prolongamos la vida útil de sus equipos holográficos con planes adaptados a sus necesidades.
+  <section class="services-list" aria-label="Lista de servicios">
+    <article class="service-card glass-inner" itemscope itemtype="https://schema.org/Service">
+      <i class="fa-solid fa-wrench service-icon" aria-hidden="true"></i>
+      <h2 itemprop="name">Mantenimiento Preventivo y Correctivo</h2>
+      <p itemprop="description">
+        Aseguramos la operatividad y prolongamos la vida útil de sus equipos holográficos en Costa Rica
+        con planes de mantenimiento adaptados a sus necesidades operativas.
       </p>
     </article>
 
-    <article class="service-card glass-inner">
-      <i class="fa-solid fa-wand-magic-sparkles service-icon"></i>
-      <h2>Diseño y Desarrollo Personalizado</h2>
-      <p>
-        Creamos soluciones a la medida, integrando tecnología holográfica con sistemas específicos de su industria para maximizar el impacto.
+    <article class="service-card glass-inner" itemscope itemtype="https://schema.org/Service">
+      <i class="fa-solid fa-wand-magic-sparkles service-icon" aria-hidden="true"></i>
+      <h2 itemprop="name">Diseño y Desarrollo Personalizado</h2>
+      <p itemprop="description">
+        Creamos contenido holográfico a la medida: logotipos flotantes, productos en 3D, avatares virtuales
+        e integraciones con sistemas específicos de su industria para maximizar el impacto.
       </p>
     </article>
 
-    <article class="service-card glass-inner">
-      <i class="fa-solid fa-graduation-cap service-icon"></i>
-      <h2>Consultoría Técnica y Capacitación</h2>
-      <p>
-        Brindamos asesoría experta y formación para su equipo, garantizando el uso eficiente y seguro de las tecnologías holográficas.
+    <article class="service-card glass-inner" itemscope itemtype="https://schema.org/Service">
+      <i class="fa-solid fa-graduation-cap service-icon" aria-hidden="true"></i>
+      <h2 itemprop="name">Consultoría Técnica y Capacitación</h2>
+      <p itemprop="description">
+        Brindamos asesoría experta y formación especializada para su equipo, garantizando el uso
+        eficiente, seguro y estratégico de las tecnologías holográficas en su empresa.
       </p>
     </article>
   </section>
+
+  <section class="cta glass-inner" aria-label="Llamado a la acción">
+    <h2>¿Necesita un servicio holográfico a la medida?</h2>
+    <p>Contáctenos y un especialista le diseñará la solución ideal para su empresa.</p>
+    <a href="contact.html" class="btn-primary">Solicitar Cotización</a>
+  </section>
+
 </main>
 
-<footer class="glass">
+<footer class="glass" role="contentinfo">
   <div class="container">
-    <p>&copy; 2026 Hologramas CR. Todos los derechos reservados.</p>
-    <p>San José, Costa Rica</p>
+    <p><strong>Hologramas CR</strong> — Displays holográficos 5D en Costa Rica</p>
+    <p>
+      <a href="products.html">Productos</a> &nbsp;|&nbsp;
+      <a href="services.html">Servicios</a> &nbsp;|&nbsp;
+      <a href="about.html">Acerca de</a> &nbsp;|&nbsp;
+      <a href="contact.html">Contacto</a>
+    </p>
+    <p>&copy; 2026 Hologramas CR. Todos los derechos reservados. San José, Costa Rica.</p>
   </div>
 </footer>
 

@@ -4,8 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Carrito de Compras | Hologramas CR</title>
-    <meta name="description" content="Carrito de compras — Hologramas CR. Revise su pedido y realice su pago de forma segura." />
+    <meta name="description" content="Carrito de compras — Hologramas CR. Revise su pedido de equipos holográficos y realice su pago de forma segura con PayPal." />
+    <meta name="robots" content="noindex, nofollow" />
+
+    <link rel="canonical" href="https://hologramas.cr/cart.html" />
     <link rel="icon" href="images/logo.png" type="image/png" />
+
+    <!-- Performance hints -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
+
     <link rel="stylesheet" href="css/styles.css" />
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&family=Outfit&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
@@ -31,21 +41,21 @@
 <header class="main-header glass">
     <div class="container">
         <div class="header-top">
-            <a href="index.html" class="logo-link">
-                <img src="images/logo.png" alt="Logo Hologramas CR" class="logo" />
+            <a href="index.html" class="logo-link" aria-label="Hologramas CR — Inicio">
+                <img src="images/logo.png" alt="Hologramas CR" class="logo" width="180" height="48" />
             </a>
             <div class="cart-panel-header">
-                <a href="cart.html" class="cart-button" aria-label="Ver carrito">
-                    <i class="fa-solid fa-cart-shopping"></i>
+                <a href="cart.html" class="cart-button" aria-label="Ver carrito de compras">
+                    <i class="fa-solid fa-cart-shopping" aria-hidden="true"></i>
                     <span id="cart-count" class="cart-count">0</span>
                 </a>
             </div>
-            <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
-                 <i class="fa-solid fa-bars"></i>
+            <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="navLinks">
+                 <i class="fa-solid fa-bars" aria-hidden="true"></i>
             </button>
         </div>
-        <nav class="main-nav">
-            <ul class="nav-links" id="navLinks">
+        <nav class="main-nav" aria-label="Navegación principal">
+            <ul class="nav-links" id="navLinks" role="list">
                 <li><a href="index.html">Inicio</a></li>
                 <li><a href="about.html">Acerca de Nosotros</a></li>
                 <li><a href="products.html">Productos</a></li>
@@ -66,20 +76,20 @@
         </div>
 
         <div id="cart-view">
-            <table class="cart-table">
+            <table class="cart-table" aria-label="Productos en el carrito">
                 <thead>
                     <tr>
-                        <th>Producto</th>
-                        <th>Precio</th>
-                        <th>Cantidad</th>
-                        <th>Subtotal</th>
-                        <th></th>
+                        <th scope="col">Producto</th>
+                        <th scope="col">Precio</th>
+                        <th scope="col">Cantidad</th>
+                        <th scope="col">Subtotal</th>
+                        <th scope="col"><span class="sr-only">Eliminar</span></th>
                     </tr>
                 </thead>
                 <tbody id="cart-items-table"></tbody>
             </table>
 
-            <div class="cart-summary">
+            <div class="cart-summary" aria-label="Resumen del pedido">
                 <div class="summary-item">
                     <span>Subtotal:</span>
                     <span id="cart-subtotal">$0.00</span>
@@ -102,10 +112,16 @@
     </div>
 </main>
 
-<footer class="glass">
+<footer class="glass" role="contentinfo">
     <div class="container">
-        <p>&copy; 2026 Hologramas CR. Todos los derechos reservados.</p>
-        <p>San José, Costa Rica</p>
+        <p><strong>Hologramas CR</strong> — Displays holográficos 5D en Costa Rica</p>
+        <p>
+          <a href="products.html">Productos</a> &nbsp;|&nbsp;
+          <a href="services.html">Servicios</a> &nbsp;|&nbsp;
+          <a href="about.html">Acerca de</a> &nbsp;|&nbsp;
+          <a href="contact.html">Contacto</a>
+        </p>
+        <p>&copy; 2026 Hologramas CR. Todos los derechos reservados. San José, Costa Rica.</p>
     </div>
 </footer>
 

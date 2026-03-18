@@ -3,36 +3,9 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Acerca de Nosotros | Hologramas CR — Empresa Holográfica en Costa Rica</title>
-    <meta name="description" content="Conozca a Hologramas CR: empresa líder en tecnología holográfica en Costa Rica. Nuestra misión, visión y equipo multidisciplinario de ingenieros y diseñadores especializados." />
-    <meta name="keywords" content="hologramas Costa Rica empresa, quiénes somos Hologramas CR, empresa holográfica Costa Rica, tecnología holográfica San José" />
-    <meta name="robots" content="index, follow" />
-    <meta name="author" content="Hologramas CR" />
-
-    <link rel="canonical" href="https://hologramas.cr/about.html" />
+    <title>Acerca de Nosotros | Hologramas CR</title>
+    <meta name="description" content="Conoce a Hologramas CR — líderes en soluciones holográficas de alta tecnología en Costa Rica. Nuestra misión, visión y equipo." />
     <link rel="icon" href="images/logo.png" type="image/png" />
-
-    <!-- Open Graph -->
-    <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="Hologramas CR" />
-    <meta property="og:title" content="Acerca de Nosotros | Hologramas CR" />
-    <meta property="og:description" content="Empresa líder en tecnología holográfica en Costa Rica. Misión, visión y equipo especializado en holografía 5D." />
-    <meta property="og:url" content="https://hologramas.cr/about.html" />
-    <meta property="og:image" content="https://hologramas.cr/images/logo2.png" />
-    <meta property="og:locale" content="es_CR" />
-
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Acerca de Nosotros | Hologramas CR" />
-    <meta name="twitter:description" content="Empresa líder en tecnología holográfica en Costa Rica. Equipo especializado en holografía 5D." />
-    <meta name="twitter:image" content="https://hologramas.cr/images/logo2.png" />
-
-    <!-- Performance hints -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
-    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
-
     <link rel="stylesheet" href="css/styles.css" />
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&family=Outfit&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
@@ -44,46 +17,6 @@
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'G-GMX8XPWR30');
-    </script>
-
-    <!-- JSON-LD Structured Data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "Organization",
-          "@id": "https://hologramas.cr/#organization",
-          "name": "Hologramas CR",
-          "url": "https://hologramas.cr",
-          "logo": "https://hologramas.cr/images/logo.png",
-          "description": "Empresa líder en soluciones holográficas 5D para empresas en Costa Rica y Latinoamérica.",
-          "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "San José",
-            "addressCountry": "CR"
-          },
-          "foundingDate": "2020",
-          "knowsAbout": ["holografía", "displays holográficos", "tecnología 5D", "marketing holográfico"]
-        },
-        {
-          "@type": "AboutPage",
-          "@id": "https://hologramas.cr/about.html",
-          "url": "https://hologramas.cr/about.html",
-          "name": "Acerca de Nosotros — Hologramas CR",
-          "description": "Empresa líder en tecnología holográfica en Costa Rica. Nuestra misión, visión y equipo.",
-          "isPartOf": { "@id": "https://hologramas.cr/#website" },
-          "about": { "@id": "https://hologramas.cr/#organization" },
-          "breadcrumb": {
-            "@type": "BreadcrumbList",
-            "itemListElement": [
-              { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://hologramas.cr/" },
-              { "@type": "ListItem", "position": 2, "name": "Acerca de Nosotros", "item": "https://hologramas.cr/about.html" }
-            ]
-          }
-        }
-      ]
-    }
     </script>
 </head>
 <body>
@@ -98,22 +31,22 @@
 <header class="main-header glass">
     <div class="container">
         <div class="header-top">
-            <a href="index.html" class="logo-link" aria-label="Hologramas CR — Inicio">
-                <img src="images/logo.png" alt="Hologramas CR" class="logo" width="180" height="48" />
+            <a href="index.html" class="logo-link">
+                <img src="images/logo.png" alt="Logo Hologramas CR" class="logo" />
             </a>
             <div class="cart-panel-header">
-                <a href="cart.html" class="cart-button" aria-label="Ver carrito de compras">
-                    <i class="fa-solid fa-cart-shopping" aria-hidden="true"></i>
+                <a href="cart.html" class="cart-button" aria-label="Ver carrito">
+                    <i class="fa-solid fa-cart-shopping"></i>
                     <span id="cart-count" class="cart-count">0</span>
                 </a>
             </div>
-            <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="navLinks">
-                 <i class="fa-solid fa-bars" aria-hidden="true"></i>
+            <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+                 <i class="fa-solid fa-bars"></i>
             </button>
         </div>
 
-        <nav class="main-nav" aria-label="Navegación principal">
-            <ul class="nav-links" id="navLinks" role="list">
+        <nav class="main-nav">
+            <ul class="nav-links" id="navLinks">
                 <li><a href="index.html">Inicio</a></li>
                 <li><a href="about.html" aria-current="page">Acerca de Nosotros</a></li>
                 <li><a href="products.html">Productos</a></li>
@@ -125,72 +58,45 @@
 </header>
 
 <main class="container glass content">
-
-  <nav class="breadcrumbs" aria-label="Ruta de navegación">
-    <a href="index.html">Inicio</a>
-    <span aria-hidden="true">›</span>
-    <span aria-current="page">Acerca de Nosotros</span>
-  </nav>
-
-  <section class="hero glass-inner" aria-label="Descripción general">
+  <section class="hero glass-inner">
     <h1>Acerca de Hologramas Costa Rica</h1>
     <p>
-      Somos líderes en soluciones holográficas de alta tecnología en Costa Rica,
-      especializándonos en displays holográficos 5D y servicios para empresas de alto valor agregado
-      en los sectores comercial, industrial y educativo.
+      Somos líderes en soluciones holográficas de alta tecnología,
+      especializándonos en equipos y servicios para empresas de alto valor agregado en Costa Rica.
     </p>
   </section>
 
-  <div class="about-grid" role="list">
-    <div class="about-card glass-inner" role="listitem">
-      <i class="fa-solid fa-bullseye about-icon" aria-hidden="true"></i>
+  <div class="about-grid">
+    <div class="about-card glass-inner">
+      <i class="fa-solid fa-bullseye about-icon"></i>
       <h2>Nuestra Misión</h2>
       <p>
-        Proveer tecnología holográfica innovadora y servicios personalizados que impulsen la transformación digital
-        y competitividad de nuestros clientes en Costa Rica y Latinoamérica.
+        Proveer tecnología holográfica innovadora y servicios personalizados que impulsen la transformación digital y competitividad de nuestros clientes.
       </p>
     </div>
 
-    <div class="about-card glass-inner" role="listitem">
-      <i class="fa-solid fa-eye about-icon" aria-hidden="true"></i>
+    <div class="about-card glass-inner">
+      <i class="fa-solid fa-eye about-icon"></i>
       <h2>Nuestra Visión</h2>
       <p>
-        Ser la empresa referente en Latinoamérica en tecnología holográfica aplicada a la industria,
-        comercio y educación, posicionando a Costa Rica como centro de innovación holográfica.
+        Ser la empresa referente en Latinoamérica en tecnología holográfica aplicada a la industria, comercio y educación.
       </p>
     </div>
 
-    <div class="about-card glass-inner" role="listitem">
-      <i class="fa-solid fa-users about-icon" aria-hidden="true"></i>
+    <div class="about-card glass-inner">
+      <i class="fa-solid fa-users about-icon"></i>
       <h2>El Equipo</h2>
       <p>
-        Contamos con un equipo multidisciplinario de ingenieros, diseñadores gráficos y técnicos
-        especializados en holografía, dedicados a crear soluciones a la medida de cada cliente.
-      </p>
-    </div>
-
-    <div class="about-card glass-inner" role="listitem">
-      <i class="fa-solid fa-award about-icon" aria-hidden="true"></i>
-      <h2>Nuestros Valores</h2>
-      <p>
-        Innovación continua, excelencia técnica, atención personalizada y compromiso con el éxito
-        de cada cliente guían cada proyecto que emprendemos.
+        Contamos con un equipo multidisciplinario de ingenieros, diseñadores y técnicos especializados en holografía, dedicados a crear soluciones a la medida.
       </p>
     </div>
   </div>
-
 </main>
 
-<footer class="glass" role="contentinfo">
+<footer class="glass">
   <div class="container">
-    <p><strong>Hologramas CR</strong> — Displays holográficos 5D en Costa Rica</p>
-    <p>
-      <a href="products.html">Productos</a> &nbsp;|&nbsp;
-      <a href="services.html">Servicios</a> &nbsp;|&nbsp;
-      <a href="about.html">Acerca de</a> &nbsp;|&nbsp;
-      <a href="contact.html">Contacto</a>
-    </p>
-    <p>&copy; 2026 Hologramas CR. Todos los derechos reservados. San José, Costa Rica.</p>
+    <p>&copy; 2026 Hologramas CR. Todos los derechos reservados.</p>
+    <p>San José, Costa Rica</p>
   </div>
 </footer>
 

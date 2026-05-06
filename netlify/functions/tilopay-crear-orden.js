@@ -66,7 +66,7 @@ exports.handler = async (event) => {
                 currency:    "USD",
                 orderNumber: orderId,
                 capture:     1,
-                redirect:    `${siteUrl}/cart.html?pago=exitoso&orden=${orderId}`,
+                redirect:    `${siteUrl}/pago-exitoso.html`,
                 billToEmail: "hologramascr506@gmail.com",
                 hashVersion: "V2",
                 platform:    "hologramas-cr",

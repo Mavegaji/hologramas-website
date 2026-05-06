@@ -7,7 +7,12 @@
       "WebFetch(domain:tilopay.com)",
       "WebFetch(domain:app.tilopay.com)",
       "WebFetch(domain:storage.googleapis.com)",
-      "WebFetch(domain:www.postman.com)"
+      "WebFetch(domain:www.postman.com)",
+      "WebFetch(domain:plugins.trac.wordpress.org)",
+      "WebFetch(domain:plugins.svn.wordpress.org)",
+      "WebFetch(domain:apps.odoo.com)",
+      "WebFetch(domain:support.wix.com)",
+      "WebFetch(domain:support.bigcommerce.com)"
     ]
   }
 }

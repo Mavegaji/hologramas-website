@@ -8,7 +8,8 @@ const productos = [
         diametro: 18,
         precio: 108,
         imagen: "V20.png",
-        descripcion: "Display holográfico compacto ideal para escaparates, puntos de venta y presentaciones de escritorio."
+        descripcion: "Display holográfico compacto ideal para escaparates, puntos de venta y presentaciones de escritorio.",
+        tiloPayUrl: "https://tp.cr/l/MjEwNDQ4"
     },
     {
         id: 2,
@@ -17,7 +18,8 @@ const productos = [
         diametro: 43,
         precio: 143,
         imagen: "V42.png",
-        descripcion: "Display holográfico de tamaño mediano, perfecto para kioscos interactivos y exhibiciones comerciales."
+        descripcion: "Display holográfico de tamaño mediano, perfecto para kioscos interactivos y exhibiciones comerciales.",
+        tiloPayUrl: "https://tp.cr/l/MjEwNDUw"
     },
     {
         id: 3,
@@ -26,7 +28,8 @@ const productos = [
         diametro: 65,
         precio: 704,
         imagen: "P65.png",
-        descripcion: "Sistema profesional de alto impacto para presentaciones corporativas, ferias y eventos empresariales."
+        descripcion: "Sistema profesional de alto impacto para presentaciones corporativas, ferias y eventos empresariales.",
+        tiloPayUrl: "https://tp.cr/l/MjEwNDUy"
     },
     {
         id: 4,
@@ -35,7 +38,8 @@ const productos = [
         diametro: 80,
         precio: 759,
         imagen: "P80.png",
-        descripcion: "Sistema profesional de gran formato ideal para audiencias amplias, lobbies y salones de exposición."
+        descripcion: "Sistema profesional de gran formato ideal para audiencias amplias, lobbies y salones de exposición.",
+        tiloPayUrl: "https://tp.cr/l/MjEwNDUz"
     },
     {
         id: 5,
@@ -44,7 +48,8 @@ const productos = [
         diametro: 77,
         precio: 1628,
         imagen: "A80.png",
-        descripcion: "Sistema robusto para uso exterior, resistente a condiciones ambientales adversas. Ideal para espacios públicos y fachadas."
+        descripcion: "Sistema robusto para uso exterior, resistente a condiciones ambientales adversas. Ideal para espacios públicos y fachadas.",
+        tiloPayUrl: "https://tp.cr/l/MjEwNDU0"
     }
 ];
 
@@ -55,7 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Si el contenedor de productos no existe en esta página, no hacemos nada.
     if (!productList) return;
 
-    productos.forEach(prod => {
+    productos.forEach((prod) => {
         const article = document.createElement("article");
         article.className = "product-card glass-inner";
 
@@ -70,11 +75,16 @@ document.addEventListener("DOMContentLoaded", () => {
                     <li><i class="fa-solid fa-tag"></i> Precio: <strong>$${prod.precio.toFixed(2)}</strong></li>
                 </ul>
             </div>
-            <button class="btn-primary agregar-carrito" data-id="${prod.id}">
-                <i class="fa-solid fa-cart-plus"></i> Agregar al carrito
-            </button>
+            <div class="product-actions">
+                <button class="btn-primary agregar-carrito" data-id="${prod.id}">
+                    <i class="fa-solid fa-cart-plus"></i> Agregar al carrito
+                </button>
+                <a id="tlpmbd-btn-pay" referer="https://storage.googleapis.com/tilo-uploads/assets" href="${prod.tiloPayUrl}" target="_blank">Pay with Tilopay</a>
+            </div>
         `;
 
         productList.appendChild(article);
     });
+
+    if (typeof tlpmbdInit === "function") tlpmbdInit();
 });

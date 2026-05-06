@@ -78,43 +78,25 @@ function renderizarPaginaCarrito() {
     document.getElementById('cart-tax').textContent = `$${tax.toFixed(2)}`;
     document.getElementById('cart-total').textContent = `$${total.toFixed(2)}`;
 
-    // Renderizar botón de PayPal con el total final
-    renderizarBotonPaypal(total);
+    renderizarBotonTilopay(total);
 }
 
-/**
- * Configura y renderiza el botón de PayPal.
- */
-function renderizarBotonPaypal(total) {
-    const container = document.getElementById("paypal-button-container");
-    if (!container) return;
-    container.innerHTML = ""; // Limpiar antes de renderizar para evitar duplicados
+// Reemplazar este valor con el enlace de pago de monto variable de su dashboard de Tilopay
+const TILO_CART_URL = "https://tp.cr/l/REEMPLAZAR_CON_URL_DEL_CARRITO";
 
-    paypal.Buttons({
-        createOrder: (data, actions) => {
-            return actions.order.create({
-                purchase_units: [{
-                    amount: {
-                        value: total.toFixed(2),
-                        currency_code: 'USD'
-                    }
-                }]
-            });
-        },
-        onApprove: (data, actions) => {
-            return actions.order.capture().then(details => {
-                alert("Pago completado exitosamente por " + details.payer.name.given_name);
-                carrito = []; // Vaciar el carrito
-                guardarCarritoEnStorage();
-                actualizarContadorCarrito();
-                renderizarPaginaCarrito(); // Re-renderizar para mostrar el carrito vacío
-            });
-        },
-        onError: (err) => {
-            console.error("Ocurrió un error con el pago de PayPal:", err);
-            alert("Ocurrió un error al procesar el pago. Por favor, intente de nuevo.");
-        }
-    }).render("#paypal-button-container");
+function renderizarBotonTilopay(total) {
+    const container = document.getElementById("tilopay-cart-container");
+    if (!container) return;
+    container.innerHTML = `
+        <a id="tlpmbd-btn-pay"
+           class="btn-primary btn-tilopay-cart"
+           referer="https://storage.googleapis.com/tilo-uploads/assets"
+           href="${TILO_CART_URL}"
+           target="_blank">
+            Pay with Tilopay — $${total.toFixed(2)}
+        </a>
+    `;
+    if (typeof tlpmbdInit === "function") tlpmbdInit();
 }
 
 /**

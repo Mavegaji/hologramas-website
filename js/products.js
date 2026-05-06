@@ -79,7 +79,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 <button class="btn-primary agregar-carrito" data-id="${prod.id}">
                     <i class="fa-solid fa-cart-plus"></i> Agregar al carrito
                 </button>
-                <a id="tlpmbd-btn-pay" referer="https://storage.googleapis.com/tilo-uploads/assets" href="${prod.tiloPayUrl}" target="_blank">Pay with Tilopay</a>
+                <a id="tlpmbd-btn-pay" class="btn-primary" referer="https://storage.googleapis.com/tilo-uploads/assets" href="${prod.tiloPayUrl}" target="_blank">Pay with Tilopay</a>
             </div>
         `;
 

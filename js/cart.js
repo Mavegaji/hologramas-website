@@ -82,7 +82,7 @@ function renderizarPaginaCarrito() {
 }
 
 // Reemplazar este valor con el enlace de pago de monto variable de su dashboard de Tilopay
-const TILO_CART_URL = "https://tp.cr/l/REEMPLAZAR_CON_URL_DEL_CARRITO";
+const TILO_CART_URL = "https://tp.cr/s/MzAwMTUy";
 
 function renderizarBotonTilopay(total) {
     const container = document.getElementById("tilopay-cart-container");

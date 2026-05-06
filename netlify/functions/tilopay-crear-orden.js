@@ -78,7 +78,7 @@ exports.handler = async (event) => {
         console.log("TiloPay processPayment response:", JSON.stringify(paymentData));
 
         // type 100 = redirect to hosted payment page, url contains the payment link
-        if (paymentData.type !== 100 || !paymentData.url) {
+        if (String(paymentData.type) !== "100" || !paymentData.url) {
             console.error("Unexpected TiloPay response:", JSON.stringify(paymentData));
             return { statusCode: 502, headers: CORS, body: JSON.stringify({ error: "No payment URL returned" }) };
         }

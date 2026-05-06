@@ -87,11 +87,12 @@ const TILO_CART_URL = "https://tp.cr/s/MzAwMTUy";
 function renderizarBotonTilopay(total) {
     const container = document.getElementById("tilopay-cart-container");
     if (!container) return;
+    const urlConMonto = `${TILO_CART_URL}?amount=${total.toFixed(2)}`;
     container.innerHTML = `
         <a id="tlpmbd-btn-pay"
            class="btn-primary btn-tilopay-cart"
            referer="https://storage.googleapis.com/tilo-uploads/assets"
-           href="${TILO_CART_URL}"
+           href="${urlConMonto}"
            target="_blank">
             Pay with Tilopay — $${total.toFixed(2)}
         </a>

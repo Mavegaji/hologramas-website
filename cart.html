@@ -58,6 +58,24 @@
 </header>
 
 <main class="container glass content">
+
+    <div id="pago-exitoso-banner" class="pago-banner pago-banner--exito hidden" role="alert">
+        <i class="fa-solid fa-circle-check"></i>
+        <div>
+            <strong>¡Pago procesado exitosamente!</strong>
+            <p>Hemos recibido su pago. Recibirá una confirmación por correo electrónico.</p>
+            <span id="pago-orden-id" class="pago-orden-id"></span>
+        </div>
+    </div>
+
+    <div id="pago-fallido-banner" class="pago-banner pago-banner--error hidden" role="alert">
+        <i class="fa-solid fa-circle-xmark"></i>
+        <div>
+            <strong>El pago no pudo completarse.</strong>
+            <p>Por favor, intente de nuevo o contáctenos si el problema persiste.</p>
+        </div>
+    </div>
+
     <div class="cart-container">
         <h1>Tu Carrito de Compras</h1>
 
@@ -117,10 +135,25 @@
   </svg>
 </a>
 
+<script>
+(function () {
+    const params = new URLSearchParams(window.location.search);
+    const pago   = params.get("pago");
+    const orden  = params.get("orden");
+    if (pago === "exitoso") {
+        document.getElementById("pago-exitoso-banner").classList.remove("hidden");
+        if (orden) document.getElementById("pago-orden-id").textContent = "Número de orden: " + orden;
+        localStorage.removeItem("carrito");
+        window.history.replaceState({}, document.title, "/cart.html");
+    } else if (pago === "fallido" || pago === "cancelado") {
+        document.getElementById("pago-fallido-banner").classList.remove("hidden");
+        window.history.replaceState({}, document.title, "/cart.html");
+    }
+})();
+</script>
 <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 <script src="js/script.js"></script>
 <script src="js/products.js"></script>
 <script src="js/cart.js"></script>
-<script id="tlpmbd-platform" src="https://storage.googleapis.com/tilo-uploads/assets/js/embed.js?generation=1673969891224302"></script>
 </body>
 </html>

@@ -1,5 +1,5 @@
-const TILOPAY_LOGIN_URL = "https://app.tilopay.com/api/v1/loginSite";
-const TILOPAY_INIT_URL  = "https://app.tilopay.com/api/v1/initialize";
+const TILOPAY_LOGIN_URL   = "https://app.tilopay.com/api/v1/login";
+const TILOPAY_PAYMENT_URL = "https://app.tilopay.com/api/v1/processPayment";
 
 const CORS = {
     "Access-Control-Allow-Origin":  "*",
@@ -29,17 +29,17 @@ exports.handler = async (event) => {
     }
 
     const orderId = `HCR-${Date.now()}`;
-    const siteUrl = process.env.URL || "https://hologramas-website.netlify.app";
+    const siteUrl = process.env.URL || "https://hologramas.cr";
 
     try {
-        // --- Step 1: Authenticate with TiloPay ---
+        // --- Step 1: Authenticate ---
+        // Login uses `email` (= API User) and `password` (= API Password)
         const loginRes = await fetch(TILOPAY_LOGIN_URL, {
             method:  "POST",
-            headers: { "Content-Type": "application/json" },
+            headers: { "Content-Type": "application/json", "Accept": "application/json" },
             body: JSON.stringify({
-                apiuser:  process.env.TILOPAY_API_USER,
+                email:    process.env.TILOPAY_API_USER,
                 password: process.env.TILOPAY_API_PASSWORD,
-                key:      process.env.TILOPAY_API_KEY,
             }),
         });
 
@@ -52,36 +52,41 @@ exports.handler = async (event) => {
         }
 
         // --- Step 2: Create payment order ---
-        const initRes = await fetch(TILOPAY_INIT_URL, {
+        // `key` = API Key, used in the payment body (not the login)
+        const paymentRes = await fetch(TILOPAY_PAYMENT_URL, {
             method:  "POST",
             headers: {
                 "Content-Type":  "application/json",
-                "Authorization": `Bearer ${token}`,
+                "Accept":        "application/json",
+                "Authorization": `bearer ${token}`,
             },
             body: JSON.stringify({
-                amount:      amount.toFixed(2),
+                key:         process.env.TILOPAY_API_KEY,
+                amount:      amount,
                 currency:    "USD",
-                orderid:     orderId,
+                orderNumber: orderId,
+                capture:     1,
                 redirect:    `${siteUrl}/cart.html?pago=exitoso&orden=${orderId}`,
-                callbackUrl: `${siteUrl}/.netlify/functions/tilopay-webhook`,
+                billToEmail: "hologramascr506@gmail.com",
+                hashVersion: "V2",
+                platform:    "hologramas-cr",
+                lang:        "es-CR",
             }),
         });
 
-        const initData = await initRes.json();
-        console.log("TiloPay init response:", JSON.stringify(initData));
+        const paymentData = await paymentRes.json();
+        console.log("TiloPay processPayment response:", JSON.stringify(paymentData));
 
-        // Defensively check common field names TiloPay may return
-        const paymentUrl = initData?.url || initData?.paymentUrl || initData?.link || initData?.payment_url;
-
-        if (!paymentUrl) {
-            console.error("No payment URL in TiloPay response:", JSON.stringify(initData));
+        // type 100 = redirect to hosted payment page, url contains the payment link
+        if (paymentData.type !== 100 || !paymentData.url) {
+            console.error("Unexpected TiloPay response:", JSON.stringify(paymentData));
             return { statusCode: 502, headers: CORS, body: JSON.stringify({ error: "No payment URL returned" }) };
         }
 
         return {
             statusCode: 200,
             headers: CORS,
-            body: JSON.stringify({ paymentUrl, orderId }),
+            body: JSON.stringify({ paymentUrl: paymentData.url, orderId }),
         };
 
     } catch (err) {

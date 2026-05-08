@@ -347,11 +347,12 @@ body {
 .form-msg { margin-top: 1rem; font-size: 0.95rem; color: var(--primary); text-align: center; }
 
 /* FOOTER */
-footer { margin-top: 5rem; padding: 2rem 1rem; text-align: center; font-size: 0.9rem; color: #aaa; }
+footer { margin-top: 5rem; padding: 1.5rem 1rem; text-align: center; font-size: 0.9rem; color: #aaa; }
 footer.glass { border-radius: 20px 20px 0 0; }
 footer a { color: var(--primary); text-decoration: none; }
 
 /* SOCIAL MEDIA ICONS */
+footer .social-links { display: none; }
 .social-links { margin: 1.5rem 0 0.5rem; }
 .social-handle { font-family: var(--font-future); color: var(--primary); font-size: 0.85rem; letter-spacing: 3px; margin-bottom: 1rem; text-shadow: 0 0 10px var(--primary); }
 .social-icons { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 0.5rem; }
@@ -364,7 +365,7 @@ footer a { color: var(--primary); text-decoration: none; }
 @keyframes socialFloat { 0%, 100% { transform: translateY(0); box-shadow: 0 0 8px rgba(0, 240, 255, 0.15); } 50% { transform: translateY(-6px); box-shadow: 0 0 18px rgba(0, 240, 255, 0.45); } }
 
 /* PAYMENT METHODS */
-.payment-methods { margin-top: 1.75rem; padding-top: 1.25rem; border-top: 1px solid rgba(0, 240, 255, 0.12); }
+.payment-methods { margin-top: 0; padding-top: 0; border-top: none; }
 .payment-label { font-family: var(--font-future); font-size: 0.65rem; letter-spacing: 3px; color: rgba(255,255,255,0.38); text-transform: uppercase; margin-bottom: 1rem; }
 .payment-label i { color: var(--primary); margin-right: 0.4rem; }
 .payment-logos { display: flex; justify-content: center; align-items: center; gap: 0.6rem; flex-wrap: wrap; }

@@ -363,6 +363,45 @@ footer a { color: var(--primary); text-decoration: none; }
 .social-icon:hover { animation-play-state: paused; color: #0d0d0d; background: var(--primary); box-shadow: 0 0 22px var(--primary), 0 0 44px rgba(0, 240, 255, 0.4); border-color: var(--primary); transform: scale(1.18) translateY(-4px); }
 @keyframes socialFloat { 0%, 100% { transform: translateY(0); box-shadow: 0 0 8px rgba(0, 240, 255, 0.15); } 50% { transform: translateY(-6px); box-shadow: 0 0 18px rgba(0, 240, 255, 0.45); } }
 
+/* PAYMENT METHODS */
+.payment-methods { margin-top: 1.75rem; padding-top: 1.25rem; border-top: 1px solid rgba(0, 240, 255, 0.12); }
+.payment-label { font-family: var(--font-future); font-size: 0.65rem; letter-spacing: 3px; color: rgba(255,255,255,0.38); text-transform: uppercase; margin-bottom: 1rem; }
+.payment-label i { color: var(--primary); margin-right: 0.4rem; }
+.payment-logos { display: flex; justify-content: center; align-items: center; gap: 0.6rem; flex-wrap: wrap; }
+.payment-badge { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.35rem; padding: 0.7rem 0.9rem; border-radius: 12px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); transition: all 0.3s ease; min-width: 75px; cursor: default; }
+.payment-badge .payment-badge-icon { font-size: 1.6rem; line-height: 1; }
+.payment-badge-name { font-size: 0.62rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; line-height: 1.3; text-align: center; }
+.payment-badge-name small { display: block; font-size: 0.55rem; opacity: 0.6; letter-spacing: 2px; font-weight: 400; }
+.payment-badge.visa { border-color: rgba(26,31,113,0.5); }
+.payment-badge.visa .payment-badge-icon { color: #4b6fd2; }
+.payment-badge.visa .payment-badge-name { color: #7b9bff; }
+.payment-badge.visa:hover { border-color: rgba(75,111,210,0.8); box-shadow: 0 0 14px rgba(75,111,210,0.25); transform: translateY(-3px); background: rgba(75,111,210,0.06); }
+.payment-badge.mastercard { border-color: rgba(235,0,27,0.35); }
+.payment-badge.mastercard .payment-badge-icon { color: #eb4d1b; }
+.payment-badge.mastercard .payment-badge-name { color: #ff7755; }
+.payment-badge.mastercard:hover { border-color: rgba(235,77,27,0.75); box-shadow: 0 0 14px rgba(235,77,27,0.25); transform: translateY(-3px); background: rgba(235,77,27,0.06); }
+.payment-badge.amex { border-color: rgba(0,123,193,0.35); }
+.payment-badge.amex .payment-badge-icon { color: #007bc1; }
+.payment-badge.amex .payment-badge-name { color: #55aeff; }
+.payment-badge.amex:hover { border-color: rgba(0,123,193,0.75); box-shadow: 0 0 14px rgba(0,123,193,0.25); transform: translateY(-3px); background: rgba(0,123,193,0.06); }
+.payment-badge.credix { border-color: rgba(0,176,240,0.3); }
+.payment-badge.credix .payment-badge-icon { color: #00b0f0; }
+.payment-badge.credix .payment-badge-name { color: #00c8ff; }
+.payment-badge.credix:hover { border-color: rgba(0,176,240,0.7); box-shadow: 0 0 14px rgba(0,176,240,0.25); transform: translateY(-3px); background: rgba(0,176,240,0.06); }
+.payment-badge.tasa-cero { border-color: rgba(220,30,50,0.3); }
+.payment-badge.tasa-cero .payment-badge-icon { color: #dc1e32; }
+.payment-badge.tasa-cero .payment-badge-name { color: #ff5566; }
+.payment-badge.tasa-cero:hover { border-color: rgba(220,30,50,0.7); box-shadow: 0 0 14px rgba(220,30,50,0.25); transform: translateY(-3px); background: rgba(220,30,50,0.06); }
+.payment-badge.paguitos { border-color: rgba(220,30,50,0.3); }
+.payment-badge.paguitos .payment-badge-icon { color: #dc1e32; }
+.payment-badge.paguitos .payment-badge-name { color: #ff5566; }
+.payment-badge.paguitos:hover { border-color: rgba(220,30,50,0.7); box-shadow: 0 0 14px rgba(220,30,50,0.25); transform: translateY(-3px); background: rgba(220,30,50,0.06); }
+.payment-badge.tilopay { border-color: rgba(59,76,202,0.35); }
+.payment-badge.tilopay .payment-badge-icon { color: #4361ee; }
+.payment-badge.tilopay .payment-badge-name { color: #7b9cff; }
+.payment-badge.tilopay:hover { border-color: rgba(67,97,238,0.7); box-shadow: 0 0 14px rgba(67,97,238,0.3); transform: translateY(-3px); background: rgba(67,97,238,0.06); }
+@media (max-width: 480px) { .payment-logos { gap: 0.45rem; } .payment-badge { min-width: 65px; padding: 0.6rem 0.7rem; } .payment-badge .payment-badge-icon { font-size: 1.4rem; } }
+
 /* DECORATIVE ELEMENTS */
 .holo-rings { position: fixed; top: 50%; left: 50%; width: 300px; height: 300px; margin-left: -150px; margin-top: -150px; border-radius: 50%; z-index: -5; pointer-events: none; }
 .holo-ring { position: absolute; width: 100%; height: 100%; border: 2px solid var(--primary); border-radius: 50%; animation: pulseRing 3s infinite ease-out; opacity: 0.6; box-shadow: 0 0 12px var(--primary); }

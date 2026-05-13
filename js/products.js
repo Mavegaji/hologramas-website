@@ -8,8 +8,7 @@ const productos = [
         diametro: 18,
         precio: 108,
         imagen: "V20.png",
-        descripcion: "Display holográfico compacto ideal para escaparates, puntos de venta y presentaciones de escritorio.",
-        tiloPayUrl: "https://tp.cr/l/MjEwNDQ4"
+        descripcion: "Display holográfico compacto ideal para escaparates, puntos de venta y presentaciones de escritorio."
     },
     {
         id: 2,
@@ -18,8 +17,7 @@ const productos = [
         diametro: 43,
         precio: 143,
         imagen: "V42.png",
-        descripcion: "Display holográfico de tamaño mediano, perfecto para kioscos interactivos y exhibiciones comerciales.",
-        tiloPayUrl: "https://tp.cr/l/MjEwNDUw"
+        descripcion: "Display holográfico de tamaño mediano, perfecto para kioscos interactivos y exhibiciones comerciales."
     },
     {
         id: 3,
@@ -28,8 +26,7 @@ const productos = [
         diametro: 65,
         precio: 704,
         imagen: "P65.png",
-        descripcion: "Sistema profesional de alto impacto para presentaciones corporativas, ferias y eventos empresariales.",
-        tiloPayUrl: "https://tp.cr/l/MjEwNDUy"
+        descripcion: "Sistema profesional de alto impacto para presentaciones corporativas, ferias y eventos empresariales."
     },
     {
         id: 4,
@@ -38,8 +35,7 @@ const productos = [
         diametro: 80,
         precio: 759,
         imagen: "P80.png",
-        descripcion: "Sistema profesional de gran formato ideal para audiencias amplias, lobbies y salones de exposición.",
-        tiloPayUrl: "https://tp.cr/l/MjEwNDUz"
+        descripcion: "Sistema profesional de gran formato ideal para audiencias amplias, lobbies y salones de exposición."
     },
     {
         id: 5,
@@ -48,8 +44,7 @@ const productos = [
         diametro: 77,
         precio: 1628,
         imagen: "A80.png",
-        descripcion: "Sistema robusto para uso exterior, resistente a condiciones ambientales adversas. Ideal para espacios públicos y fachadas.",
-        tiloPayUrl: "https://tp.cr/l/MjEwNDU0"
+        descripcion: "Sistema robusto para uso exterior, resistente a condiciones ambientales adversas. Ideal para espacios públicos y fachadas."
     }
 ];
 
@@ -79,7 +74,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 <button class="btn-primary agregar-carrito" data-id="${prod.id}">
                     <i class="fa-solid fa-cart-plus"></i> Agregar al carrito
                 </button>
-                <a class="btn-primary" href="${prod.tiloPayUrl}" target="_blank">Pagar con Tilopay</a>
             </div>
         `;
 

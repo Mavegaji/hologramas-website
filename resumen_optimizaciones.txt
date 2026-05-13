@@ -1,0 +1,45 @@
+RESUMEN TÉCNICO Y EXPLICACIÓN DE OPTIMIZACIONES - BINANCE LITE
+Fecha: 13 de Mayo, 2026
+
+PARTE 1: ¿QUÉ SE HIZO? (RESUMEN DE CAMBIOS)
+---------------------------------------------------------
+1. TRACKING INSTANTÁNEO: Movido todo el sistema de rastreo al <head>.
+2. META PIXEL ELITE: Implementación completa con 'external_id' y eventos de valor.
+3. INTENT SCORING: Motor JS que puntúa el comportamiento del usuario.
+4. UX ADAPTATIVA: Sticky CTA que cambia de color y texto según el scroll.
+5. CONGRUENCIA DINÁMICA: Títulos personalizables vía URL (?h1=...).
+6. RENDIMIENTO (LCP/CLS): Skeleton loading, preloads y dimensiones de imágenes.
+
+
+PARTE 2: ¿CÓMO SE HIZO? (EXPLICACIÓN TÉCNICA)
+---------------------------------------------------------
+
+A. OPTIMIZACIÓN DEL LPV (LANDING PAGE VIEWS)
+- El problema: El Pixel estaba al final del HTML. Si el usuario cerraba la página antes de cargar 2600 líneas, la visita no se contaba.
+- La solución: Inyectamos el script de Meta en la sección <head> y usamos 'preconnect' para los servidores de Facebook. Esto permite que el Pixel "salude" al servidor antes de que el usuario vea la primera imagen.
+
+B. SISTEMA DE INTENT SCORING (MOTOR DE PUNTOS)
+- Se creó un objeto JavaScript llamado 'intentMarkers' para evitar que un mismo evento sume puntos dos veces.
+- Usamos 'EventListeners' de scroll que calculan el porcentaje de altura de la página. Al cruzar umbrales (25%, 50%, 90%), una función suma puntos a una variable global.
+- Cuando la variable 'intentScore' alcanza 12, se dispara automáticamente el evento 'HighIntentUser' hacia Meta Ads.
+
+C. STICKY CTA Y ADAPTIVE UX
+- Se diseñó un elemento <div> con 'position: fixed' y 'bottom: 0'. 
+- Usamos lógica de visibilidad: el botón solo aparece si 'videoWatched' es true y el 'window.scrollY' es mayor a 500px.
+- Al llegar al final (90% scroll), usamos manipulación del DOM (.textContent y .style.background) para transformar el botón "Inscribirme" en un mensaje de urgencia "¡ÚLTIMO PASO!" en color verde, reduciendo la fricción mental del cierre.
+
+D. ELIMINACIÓN DE SALTOS (CLS)
+- Las imágenes sin tamaño definido hacen que el contenido "empuje" hacia abajo al cargar. 
+- Editamos cada tag <img> para incluir atributos 'width' y 'height' fijos, reservando el espacio exacto en el navegador antes de que la imagen se descargue.
+
+E. SKELETON LOADING
+- Para el video, creamos un gradiente CSS animado con @keyframes que simula una carga activa. 
+- Esto mejora la "velocidad percibida": el cerebro del usuario siente que algo está pasando inmediatamente, en lugar de ver un cuadro negro o vacío.
+
+F. PERSONALIZACIÓN DINÁMICA POR URL
+- Utilizamos la API 'URLSearchParams' de JavaScript. 
+- El script busca parámetros como 'h1' en la barra de direcciones. Si los encuentra, reemplaza el texto del título principal del Hero antes de que el usuario empiece a leer, permitiendo que el anuncio y la landing digan exactamente lo mismo.
+
+G. MODO DEBUG (SISTEMA DE DIAGNÓSTICO)
+- Creamos un panel con z-index: 9999 (siempre encima) que se activa mediante un condicional de URL. 
+- Este panel está vinculado a las variables del motor de puntos, reflejando en tiempo real cada acción que el código está procesando.

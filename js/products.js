@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         article.innerHTML = `
             <h2>${prod.nombre}</h2>
-            <img src="images/${prod.imagen}" alt="${prod.nombre} Equipo Holográfico" loading="lazy" />
+            <img src="images/${prod.imagen}" alt="${prod.nombre} Equipo Holográfico" loading="lazy" width="300" height="300" />
             <div class="product-info">
                 <p class="product-desc">${prod.descripcion}</p>
                 <ul class="product-specs">

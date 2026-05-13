@@ -1,5 +1,5 @@
 <header class="main-header container">
-  <img src="logo.png" alt="Logo" class="logo" width="150" height="48" />
+  <img src="logo.png" alt="Logo" class="logo" width="48" height="48" />
   <nav>
     <ul class="nav-links" id="nav-links">
       <li><a href="#" aria-current="page">Home</a></li>

@@ -16,9 +16,9 @@ exports.handler = async (event) => {
     }
 
     // --- Input validation ---
-    let rawAmount;
+    let rawAmount, customer;
     try {
-        ({ amount: rawAmount } = JSON.parse(event.body));
+        ({ amount: rawAmount, customer } = JSON.parse(event.body));
     } catch {
         return { statusCode: 400, headers: CORS, body: JSON.stringify({ error: "Invalid JSON" }) };
     }
@@ -53,6 +53,25 @@ exports.handler = async (event) => {
 
         // --- Step 2: Create payment order ---
         // `key` = API Key, used in the payment body (not the login)
+        const paymentBody = {
+            key:             process.env.TILOPAY_API_KEY,
+            amount:          amount,
+            currency:        "USD",
+            orderNumber:     orderId,
+            capture:         1,
+            redirect:        `${siteUrl}/pago-exitoso.html`,
+            billToFirstName: customer?.firstName || "Cliente",
+            billToLastName:  customer?.lastName || "Hologramas CR",
+            billToEmail:     customer?.email || "hologramascr506@gmail.com",
+            billToPhone:     customer?.phone || "50671714664",
+            billToAddress:   customer?.address || "San Jose",
+            billToCity:      customer?.city || "San Jose",
+            billToCountry:   customer?.country || "CR",
+            hashVersion:     "V2",
+            platform:        "hologramas-cr",
+            lang:            "es-CR",
+        };
+
         const paymentRes = await fetch(TILOPAY_PAYMENT_URL, {
             method:  "POST",
             headers: {
@@ -60,18 +79,7 @@ exports.handler = async (event) => {
                 "Accept":        "application/json",
                 "Authorization": `bearer ${token}`,
             },
-            body: JSON.stringify({
-                key:         process.env.TILOPAY_API_KEY,
-                amount:      amount,
-                currency:    "USD",
-                orderNumber: orderId,
-                capture:     1,
-                redirect:    `${siteUrl}/pago-exitoso.html`,
-                billToEmail: "hologramascr506@gmail.com",
-                hashVersion: "V2",
-                platform:    "hologramas-cr",
-                lang:        "es-CR",
-            }),
+            body: JSON.stringify(paymentBody),
         });
 
         const paymentData = await paymentRes.json();

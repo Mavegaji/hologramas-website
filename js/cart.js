@@ -77,52 +77,6 @@ function renderizarPaginaCarrito() {
     document.getElementById('cart-subtotal').textContent = `$${subtotal.toFixed(2)}`;
     document.getElementById('cart-tax').textContent = `$${tax.toFixed(2)}`;
     document.getElementById('cart-total').textContent = `$${total.toFixed(2)}`;
-
-    renderizarBotonTilopay(total);
-}
-
-function renderizarBotonTilopay(total) {
-    const container = document.getElementById("tilopay-cart-container");
-    if (!container) return;
-
-    container.innerHTML = `
-        <button id="btn-pagar" class="btn-primary btn-tilopay-cart" type="button">
-            Pagar con TiloPay — $${total.toFixed(2)}
-        </button>
-        <p id="tilopay-error-msg" class="tilopay-error hidden"></p>
-    `;
-
-    document.getElementById("btn-pagar").addEventListener("click", async function () {
-        const btn = this;
-        btn.disabled = true;
-        btn.textContent = "Procesando...";
-
-        const errorEl = document.getElementById("tilopay-error-msg");
-        errorEl.classList.add("hidden");
-
-        try {
-            const res = await fetch("/.netlify/functions/tilopay-crear-orden", {
-                method:  "POST",
-                headers: { "Content-Type": "application/json" },
-                body:    JSON.stringify({ amount: total }),
-            });
-
-            const data = await res.json();
-
-            if (!res.ok || !data.paymentUrl) {
-                throw new Error(data.error || "No se recibió URL de pago.");
-            }
-
-            window.location.href = data.paymentUrl;
-
-        } catch (e) {
-            console.error("tilopay-crear-orden:", e);
-            errorEl.textContent = "Hubo un problema al procesar el pago. Por favor, inténtelo de nuevo.";
-            errorEl.classList.remove("hidden");
-            btn.disabled = false;
-            btn.textContent = `Pagar con TiloPay — $${total.toFixed(2)}`;
-        }
-    });
 }
 
 /**
